@@ -16,10 +16,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
-      --color-brand-green: #114521;
-      --color-brand-green-dark: #092818;
-      --color-brand-green-light: #1a5c34;
-      --color-brand-green-accent: #7dd89a;
+      --color-brand-green: #227844;
+      --color-brand-green-dark: #155a32;
+      --color-brand-green-light: #2d9d56;
+      --color-brand-green-accent: #8ee5a8;
       --color-brand-black: #0a0a0a;
       --color-brand-charcoal: #252525;
       --color-brand-navy: #121212;
@@ -48,17 +48,6 @@
 
     .nav-scrolled { background: rgba(18,18,18,0.97) !important; box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
 
-    .hero-stripe::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 56px;
-      background: linear-gradient(to bottom, transparent, #F5F5F0);
-      pointer-events: none;
-    }
-
     .section-tag {
       display: inline-block;
       font-family: 'Barlow Condensed', sans-serif;
@@ -66,8 +55,8 @@
       font-size: 0.7rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #114521;
-      border-left: 3px solid #114521;
+      color: #227844;
+      border-left: 3px solid #227844;
       padding-left: 10px;
       margin-bottom: 12px;
     }
@@ -76,22 +65,26 @@
       border-left: none;
       padding-left: 0;
       padding-bottom: 10px;
-      border-bottom: 2px solid #114521;
+      border-bottom: 2px solid #227844;
     }
 
     .section-tag--dark {
-      color: #7dd89a;
-      border-left-color: #7dd89a;
+      color: #8ee5a8;
+      border-left-color: #8ee5a8;
     }
 
-    .product-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
-    .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+    /* No translateY — it caused overlap/mis-read layout next to tall accordions in the grid */
+    .product-card { transition: box-shadow 0.25s ease; }
+    .product-card:hover { z-index: 2; box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+
+    /* One product row: row height follows content; avoids clipping/shrink in nested flex columns */
+    .product-cards-grid { grid-auto-rows: min-content; }
 
     .nav-link::after {
       content: '';
       display: block;
       height: 2px;
-      background: #7dd89a;
+      background: #8ee5a8;
       width: 0;
       transition: width 0.25s ease;
       margin-top: 2px;
@@ -117,8 +110,8 @@
       align-items: center;
       justify-content: center;
       border-radius: 2px;
-      background: rgba(17,69,33,0.38);
-      color: #7dd89a;
+      background: rgba(34,120,68,0.38);
+      color: #8ee5a8;
       font-weight: 700;
       font-size: 0.65rem;
     }
@@ -126,8 +119,8 @@
     .hero-bg {
       background-color: #121212;
       background-image:
-        linear-gradient(165deg, rgba(18,18,18,0.98) 0%, rgba(17,69,33,0.2) 42%, rgba(18,18,18,0.98) 100%),
-        radial-gradient(ellipse 90% 55% at 75% 0%, rgba(17,69,33,0.16), transparent 55%),
+        linear-gradient(165deg, rgba(18,18,18,0.98) 0%, rgba(34,120,68,0.22) 42%, rgba(18,18,18,0.98) 100%),
+        radial-gradient(ellipse 90% 55% at 75% 0%, rgba(34,120,68,0.18), transparent 55%),
         repeating-linear-gradient(
           90deg,
           transparent,
@@ -139,8 +132,8 @@
 
     input:focus, textarea:focus {
       outline: none;
-      border-color: #114521 !important;
-      box-shadow: 0 0 0 3px rgba(17,69,33,0.14);
+      border-color: #227844 !important;
+      box-shadow: 0 0 0 3px rgba(34,120,68,0.18);
     }
 
     /* Content is always visible (scroll-reveal caused “empty” sections if JS missed). */
@@ -156,11 +149,11 @@
       background: linear-gradient(165deg, #ffffff 0%, #fafaf8 100%);
       box-shadow:
         0 1px 0 rgba(0,0,0,0.04),
-        0 18px 50px -24px rgba(17,69,33,0.12);
+        0 18px 50px -24px rgba(34,120,68,0.14);
     }
 
     .surface-dark {
-      background: linear-gradient(160deg, #142018 0%, #0f1812 55%, #121a14 100%);
+      background: linear-gradient(160deg, #183222 0%, #12261a 55%, #152818 100%);
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.06),
         0 24px 60px -20px rgba(0,0,0,0.45);
@@ -168,14 +161,14 @@
 
     /* Lime accent on dark — hero headline emphasis */
     .text-gradient-gold {
-      background: linear-gradient(105deg, #c8f5d4 0%, #7dd89a 40%, #5ecf82 100%);
+      background: linear-gradient(105deg, #d2f8dc 0%, #8ee5a8 40%, #52d078 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     .pattern-dots {
-      background-image: radial-gradient(rgba(17,69,33,0.14) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(34,120,68,0.16) 1px, transparent 1px);
       background-size: 20px 20px;
     }
 
@@ -264,8 +257,8 @@
 
 <main id="main">
 <!-- HERO -->
-<section id="hero" class="hero-bg hero-stripe relative min-h-[88vh] flex items-center overflow-hidden pb-14 md:pb-20">
-  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_100%_0%,rgba(17,69,33,0.2),transparent)]"></div>
+<section id="hero" class="hero-bg relative min-h-[88vh] flex items-center overflow-hidden border-b border-white/[0.1] pb-14 md:pb-20">
+  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_100%_0%,rgba(34,120,68,0.24),transparent)]"></div>
   <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-brand-green-accent/80 via-brand-green/50 to-transparent z-10"></div>
 
   <div class="max-w-7xl mx-auto px-5 sm:px-6 pt-28 sm:pt-32 pb-12 md:pb-16 w-full relative z-10 animate-hero-in">
@@ -351,7 +344,7 @@
 </section>
 
 <!-- TRUST STRIP -->
-<div class="relative z-20 border-t border-b border-black/[0.06] bg-white pattern-dots">
+<div class="relative z-10 border-b border-black/[0.06] bg-brand-paper pattern-dots">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 py-6 md:py-8">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
       <div class="flex gap-3 items-start">
@@ -463,11 +456,11 @@
       <p class="text-brand-muted mt-4 text-sm md:text-base leading-relaxed">Verified manufacturers, structured categories, and documentation-ready deliveries — aligned to how international projects run procurement.</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7 items-stretch">
+    <div class="product-cards-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7 items-start">
       <!-- PPE -->
-      <div class="product-card surface-card border border-black/[0.06] rounded-2xl overflow-hidden h-full flex flex-col ring-1 ring-black/[0.03]">
-        <div class="bg-brand-green-dark h-2"></div>
-        <div class="p-7 flex flex-col flex-1">
+      <div class="product-card surface-card border border-black/[0.06] rounded-2xl flex flex-col ring-1 ring-black/[0.03] w-full min-w-0 min-h-min self-start relative z-0">
+        <div class="bg-brand-green-dark h-2 shrink-0"></div>
+        <div class="p-7 flex flex-col min-w-0 shrink-0">
           <div class="w-14 h-14 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center mb-5">
             <svg class="w-7 h-7 text-brand-green" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
@@ -482,7 +475,7 @@
           </div>
 
           <button type="button"
-            class="mt-auto w-full flex items-center justify-between gap-3 bg-brand-paper border border-black/[0.08] rounded-xl px-4 py-3.5 text-brand-black hover:bg-white hover:border-brand-green/30 transition-colors shadow-sm"
+            class="mt-6 shrink-0 w-full flex items-center justify-between gap-3 bg-brand-paper border border-black/[0.08] rounded-xl px-4 py-3.5 text-brand-black hover:bg-white hover:border-brand-green/30 transition-colors shadow-sm"
             data-accordion-toggle="ppe-panel"
             aria-expanded="false"
             aria-controls="ppe-panel">
@@ -490,19 +483,19 @@
             <span class="text-brand-green-accent font-extrabold">+</span>
           </button>
 
-          <div id="ppe-panel" data-accordion-panel="ppe-panel" class="hidden pt-4 border-t border-gray-200/70 mt-4">
+          <div id="ppe-panel" data-accordion-panel="ppe-panel" class="hidden shrink-0 overflow-visible pt-4 pb-4 border-t border-gray-200/70 mt-4">
             <ul class="space-y-3">
               <li class="flex items-start gap-4 bg-white/50 border border-white/10 rounded-sm p-4">
                 <div class="w-12 h-12 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
                   <img class="w-full h-full object-cover"
                     src="images/ppe-helmets.png"
                     alt="Safety Helmets"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Helmet';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Helmet';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Safety Helmets</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 7,500</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Safety Helmets</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 7,500</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Impact-resistant helmets for high-compliance site safety.</p>
                 </div>
@@ -513,12 +506,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/ppe-vests.png"
                     alt="Reflective Vests"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Vest';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Vest';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Reflective Vests</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 6,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Reflective Vests</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 6,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">High-visibility vests for workers and traffic control.</p>
                 </div>
@@ -529,12 +522,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/ppe-boots.png"
                     alt="Safety Boots"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Boot';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Boot';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Safety Boots</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 18,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Safety Boots</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 18,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Durable footwear for worksite protection and grip.</p>
                 </div>
@@ -545,12 +538,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/ppe-hand-gloves.png"
                     alt="Hand gloves"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Gloves';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Gloves';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Hand Gloves</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 900</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Hand Gloves</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 900</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -561,12 +554,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/ppe-face-mask.png"
                     alt="Face mask"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Mask';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Mask';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Face Mask</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 2,500</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Face Mask</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 2,500</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -577,12 +570,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/ppe-rain-boot.png"
                     alt="Rain boots"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Boots';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Boots';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Rain Boots</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 6,500</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Rain Boots</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 6,500</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -593,9 +586,9 @@
       </div>
 
       <!-- Steel -->
-      <div class="product-card surface-card border border-black/[0.06] rounded-2xl overflow-hidden h-full flex flex-col ring-1 ring-black/[0.03]">
-        <div class="bg-brand-green h-2"></div>
-        <div class="p-7 flex flex-col flex-1">
+      <div class="product-card surface-card border border-black/[0.06] rounded-2xl flex flex-col ring-1 ring-black/[0.03] w-full min-w-0 min-h-min self-start relative z-0">
+        <div class="bg-brand-green h-2 shrink-0"></div>
+        <div class="p-7 flex flex-col min-w-0 shrink-0">
           <div class="w-14 h-14 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center mb-5">
             <svg class="w-7 h-7 text-brand-green" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
@@ -610,7 +603,7 @@
           </div>
 
           <button type="button"
-            class="mt-auto w-full flex items-center justify-between gap-3 bg-brand-paper border border-black/[0.08] rounded-xl px-4 py-3.5 text-brand-black hover:bg-white hover:border-brand-green/30 transition-colors shadow-sm"
+            class="mt-6 shrink-0 w-full flex items-center justify-between gap-3 bg-brand-paper border border-black/[0.08] rounded-xl px-4 py-3.5 text-brand-black hover:bg-white hover:border-brand-green/30 transition-colors shadow-sm"
             data-accordion-toggle="steel-panel"
             aria-expanded="false"
             aria-controls="steel-panel">
@@ -618,19 +611,19 @@
             <span class="text-brand-green-accent font-extrabold">+</span>
           </button>
 
-          <div id="steel-panel" data-accordion-panel="steel-panel" class="hidden pt-4 border-t border-gray-200/70 mt-4">
+          <div id="steel-panel" data-accordion-panel="steel-panel" class="hidden shrink-0 overflow-visible pt-4 pb-4 border-t border-gray-200/70 mt-4">
             <ul class="space-y-3">
               <li class="flex items-start gap-4 bg-white/50 border border-white/10 rounded-sm p-4">
                 <div class="w-12 h-12 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
                   <img class="w-full h-full object-cover"
                     src="images/steel-rebars.png"
                     alt="Reinforcement Bars"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Rebar';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Rebar';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Reinforcement Bars</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 52,000/ton</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Reinforcement Bars</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 52,000/ton</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Standard rebars supplied with traceable documentation.</p>
                 </div>
@@ -641,12 +634,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/steel-ibeams.png"
                     alt="Structural Sections (I-Beams)"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=I-Beam';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=I-Beam';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Structural Sections (I-Beams)</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 180,000/pcs</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Structural Sections (I-Beams)</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 180,000/pcs</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Beams for steel-frame projects and reinforcement.</p>
                 </div>
@@ -657,12 +650,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/steel-mesh.png"
                     alt="Reinforcement Mesh"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Mesh';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Mesh';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Reinforcement Mesh</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 90,000/roll</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Reinforcement Mesh</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 90,000/roll</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Mesh reinforcement for slabs, walls, and concrete works.</p>
                 </div>
@@ -673,12 +666,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/steel-binding-wire.png"
                     alt="Binding wire"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Wire';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Wire';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Binding Wire</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 30,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Binding Wire</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 30,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -689,9 +682,9 @@
       </div>
 
       <!-- Tools -->
-      <div class="product-card surface-card border border-black/[0.06] rounded-2xl overflow-hidden h-full flex flex-col ring-1 ring-black/[0.03]">
-        <div class="bg-brand-green-light h-2"></div>
-        <div class="p-7 flex flex-col flex-1">
+      <div class="product-card surface-card border border-black/[0.06] rounded-2xl flex flex-col ring-1 ring-black/[0.03] w-full min-w-0 min-h-min self-start relative z-0">
+        <div class="bg-brand-green-light h-2 shrink-0"></div>
+        <div class="p-7 flex flex-col min-w-0 shrink-0">
           <div class="w-14 h-14 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center mb-5">
             <svg class="w-7 h-7 text-brand-green" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
@@ -706,7 +699,7 @@
           </div>
 
           <button type="button"
-            class="mt-auto w-full flex items-center justify-between gap-3 bg-brand-paper border border-black/[0.08] rounded-xl px-4 py-3.5 text-brand-black hover:bg-white hover:border-brand-green/30 transition-colors shadow-sm"
+            class="mt-6 shrink-0 w-full flex items-center justify-between gap-3 bg-brand-paper border border-black/[0.08] rounded-xl px-4 py-3.5 text-brand-black hover:bg-white hover:border-brand-green/30 transition-colors shadow-sm"
             data-accordion-toggle="tools-panel"
             aria-expanded="false"
             aria-controls="tools-panel">
@@ -714,19 +707,19 @@
             <span class="text-brand-green-accent font-extrabold">+</span>
           </button>
 
-          <div id="tools-panel" data-accordion-panel="tools-panel" class="hidden pt-4 border-t border-gray-200/70 mt-4">
+          <div id="tools-panel" data-accordion-panel="tools-panel" class="hidden shrink-0 overflow-visible pt-4 pb-4 border-t border-gray-200/70 mt-4">
             <ul class="space-y-3">
               <li class="flex items-start gap-4 bg-white/50 border border-white/10 rounded-sm p-4">
                 <div class="w-12 h-12 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
                   <img class="w-full h-full object-cover"
                     src="images/tools-power-tools.png"
                     alt="Power Tools"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Tools';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Tools';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Power Tools</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 85,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Power Tools</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 85,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Drills, grinders, and construction power tools for job-ready performance.</p>
                 </div>
@@ -737,12 +730,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-scaffolding.png"
                     alt="Scaffolding Materials"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Scaffold';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Scaffold';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Scaffolding Materials</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 65,000/set</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Scaffolding Materials</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 65,000/set</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Reliable scaffolding components for safe elevated work.</p>
                 </div>
@@ -753,12 +746,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-mixing-equipment.png"
                     alt="Mixing Equipment"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Mix';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Mix';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Mixing Equipment</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 220,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Mixing Equipment</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 220,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Mixers and batching tools for faster concrete preparation.</p>
                 </div>
@@ -769,12 +762,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/equipment-vibrating-machine.png"
                     alt="Vibrating machine (with poker)"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Vib';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Vib';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Vibrating Machine (with Poker)</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 370,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Vibrating Machine (with Poker)</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 370,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -785,12 +778,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/equipment-vibrating-poker-48mm.png"
                     alt="48mm vibrating poker"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=48mm';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=48mm';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">48mm Vibrating Poker</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 9,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">48mm Vibrating Poker</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 9,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -801,12 +794,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-cutting-blade-4inch.png"
                     alt="4-inch cutting blade"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Blade';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Blade';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">4-inch Cutting Blade</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 3,500</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">4-inch Cutting Blade</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 3,500</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -817,12 +810,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-cutting-disc-4inch.png"
                     alt="4-inch cutting disc"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Disc';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Disc';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">4-inch Cutting Disc</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 13,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">4-inch Cutting Disc</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 13,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -833,12 +826,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/consumable-roller-brush.png"
                     alt="Roller brush"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Brush';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Brush';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Roller Brush</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 1,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Roller Brush</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 1,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -849,12 +842,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/consumable-nails-3inch.png"
                     alt="3-inch nails"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Nails';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Nails';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">3-inch Nails</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 35,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">3-inch Nails</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 35,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -865,12 +858,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/consumable-nails-2inch.png"
                     alt="2-inch nails"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Nails';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Nails';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">2-inch Nails</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 35,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">2-inch Nails</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 35,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -881,12 +874,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-cutting-disc-350mm.png"
                     alt="350mm cutting disc"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=350mm';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=350mm';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">350mm Cutting Disc</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 22,500</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">350mm Cutting Disc</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 22,500</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -897,12 +890,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/consumable-engine-oil-25l.png"
                     alt="25L engine oil"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Oil';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Oil';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">25L Engine Oil</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 110,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">25L Engine Oil</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 110,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -913,12 +906,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-electrode-holder.png"
                     alt="Electrode holder"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Electrode';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Electrode';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Electrode Holder</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 6,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Electrode Holder</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 6,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -929,12 +922,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-right-angle-square.png"
                     alt="Right angle square"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Square';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Square';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Right Angle Square</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 3,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Right Angle Square</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 3,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -945,12 +938,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-measuring-tape.png"
                     alt="Measuring tape"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Tape';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Tape';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Measuring Tape</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 3,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Measuring Tape</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 3,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -961,12 +954,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-sledgehammer-1kg.png"
                     alt="Sledgehammer 1kg"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Hammer';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Hammer';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Sledgehammer (1kg)</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 12,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Sledgehammer (1kg)</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 12,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -977,12 +970,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-claw-hammer.png"
                     alt="Claw hammer"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Hammer';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Hammer';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Claw Hammer</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 5,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Claw Hammer</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 5,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -993,12 +986,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-spirit-level-30cm.png"
                     alt="30cm spirit level"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Level';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Level';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">30cm Spirit Level</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 4,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">30cm Spirit Level</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 4,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1009,12 +1002,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/consumable-leveling-hose-30m.png"
                     alt="30m leveling hose"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Hose';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Hose';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">30m Leveling Hose</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 30,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">30m Leveling Hose</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 30,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1025,12 +1018,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/consumable-line-maker-ink.png"
                     alt="Line maker & ink"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Line';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Line';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Line Maker & Ink</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 6,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Line Maker & Ink</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 6,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1041,12 +1034,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/lifting-shackles-2ton.png"
                     alt="Shackles (2 ton)"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Shackle';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Shackle';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Shackles (2 Ton)</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 30,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Shackles (2 Ton)</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 30,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1057,12 +1050,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/lifting-belt.png"
                     alt="Lifting belt"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Belt';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Belt';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Lifting Belt</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 60,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Lifting Belt</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 60,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1073,12 +1066,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/lifting-traction-rope.png"
                     alt="Traction rope"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Rope';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Rope';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Traction Rope</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 25,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Traction Rope</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 25,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1089,12 +1082,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/tools-handsaw.png"
                     alt="Hand saw"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Saw';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Saw';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Hand Saw</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 9,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">Hand Saw</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 9,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1105,12 +1098,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/electrical-380v-ac-contactor.png"
                     alt="380V AC contactor"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Elect';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Elect';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">380V AC Contactor</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 15,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">380V AC Contactor</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 15,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1121,12 +1114,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/equipment-vibrating-rod-50mm.png"
                     alt="50mm vibrating rod"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Rod';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Rod';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">50mm Vibrating Rod</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 130,000</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">50mm Vibrating Rod</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 130,000</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1137,24 +1130,24 @@
       </div>
 
       <!-- General -->
-      <div class="product-card surface-card border border-black/[0.06] rounded-2xl overflow-hidden h-full flex flex-col ring-1 ring-black/[0.03]">
-        <div class="bg-brand-green-accent h-2"></div>
-        <div class="p-7 flex flex-col flex-1">
+      <div class="product-card surface-card border border-black/[0.06] rounded-2xl flex flex-col ring-1 ring-black/[0.03] w-full min-w-0 min-h-min self-start relative z-0">
+        <div class="bg-brand-green-accent h-2 shrink-0"></div>
+        <div class="p-7 flex flex-col min-w-0 shrink-0">
           <div class="w-14 h-14 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center mb-5">
             <svg class="w-7 h-7 text-brand-green" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
             </svg>
           </div>
           <h3 class="font-display font-bold text-brand-black text-xl mb-3" style="font-weight:700">General Building Materials</h3>
-          <p class="text-brand-muted text-sm leading-relaxed mb-5">Cement, sand, gravel, blocks, tiles, plumbing materials, electrical conduits, and all standard construction consumables.</p>
+          <p class="text-brand-muted text-sm leading-relaxed mb-5">Sand, gravel, plumbing materials, electrical conduits, timber, and other standard construction consumables.</p>
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-brand-green/10 text-brand-green border border-brand-green/20 px-2.5 py-1 rounded-sm">Cement</span>
-            <span class="text-xs bg-brand-green/10 text-brand-green border border-brand-green/20 px-2.5 py-1 rounded-sm">Blocks</span>
-            <span class="text-xs bg-brand-green/10 text-brand-green border border-brand-green/20 px-2.5 py-1 rounded-sm">Tiles</span>
+            <span class="text-xs bg-brand-green/10 text-brand-green border border-brand-green/20 px-2.5 py-1 rounded-sm">Plumbing</span>
+            <span class="text-xs bg-brand-green/10 text-brand-green border border-brand-green/20 px-2.5 py-1 rounded-sm">Conduits</span>
+            <span class="text-xs bg-brand-green/10 text-brand-green border border-brand-green/20 px-2.5 py-1 rounded-sm">Timber</span>
           </div>
 
           <button type="button"
-            class="mt-auto w-full flex items-center justify-between gap-3 bg-brand-paper border border-black/[0.08] rounded-xl px-4 py-3.5 text-brand-black hover:bg-white hover:border-brand-green/30 transition-colors shadow-sm"
+            class="mt-6 shrink-0 w-full flex items-center justify-between gap-3 bg-brand-paper border border-black/[0.08] rounded-xl px-4 py-3.5 text-brand-black hover:bg-white hover:border-brand-green/30 transition-colors shadow-sm"
             data-accordion-toggle="general-panel"
             aria-expanded="false"
             aria-controls="general-panel">
@@ -1162,67 +1155,19 @@
             <span class="text-brand-green-accent font-extrabold">+</span>
           </button>
 
-          <div id="general-panel" data-accordion-panel="general-panel" class="hidden pt-4 border-t border-gray-200/70 mt-4">
+          <div id="general-panel" data-accordion-panel="general-panel" class="hidden shrink-0 overflow-visible pt-4 pb-4 border-t border-gray-200/70 mt-4">
             <ul class="space-y-3">
-              <li class="flex items-start gap-4 bg-white/50 border border-white/10 rounded-sm p-4">
-                <div class="w-12 h-12 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
-                  <img class="w-full h-full object-cover"
-                    src="images/general-cement.png"
-                    alt="Cement"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Cement';" />
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Cement</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 9,000/bag</div>
-                  </div>
-                  <p class="text-brand-muted text-xs leading-relaxed mt-1">Quality cement for masonry, plastering, and concrete works.</p>
-                </div>
-              </li>
-
-              <li class="flex items-start gap-4 bg-white/50 border border-white/10 rounded-sm p-4">
-                <div class="w-12 h-12 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
-                  <img class="w-full h-full object-cover"
-                    src="images/general-blocks.png"
-                    alt="Building Blocks"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Blocks';" />
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Building Blocks</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 2,800/block</div>
-                  </div>
-                  <p class="text-brand-muted text-xs leading-relaxed mt-1">Reliable blocks for durable walls and partitions.</p>
-                </div>
-              </li>
-
-              <li class="flex items-start gap-4 bg-white/50 border border-white/10 rounded-sm p-4">
-                <div class="w-12 h-12 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
-                  <img class="w-full h-full object-cover"
-                    src="images/general-tiles.png"
-                    alt="Tiles"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Tiles';" />
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">Tiles</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">From NGN 6,500/pcs</div>
-                  </div>
-                  <p class="text-brand-muted text-xs leading-relaxed mt-1">Ceramic and finishing tiles for floors and wall finishes.</p>
-                </div>
-              </li>
-
               <li class="flex items-start gap-4 bg-white/50 border border-white/10 rounded-sm p-4">
                 <div class="w-12 h-12 bg-brand-green/10 border border-brand-green/20 rounded-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
                   <img class="w-full h-full object-cover"
                     src="images/general-pvc-pipe.png"
                     alt="PVC pipe"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=PVC';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=PVC';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">PVC Pipe (1000m)</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 275</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">PVC Pipe (1000m)</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 275</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1233,12 +1178,12 @@
                   <img class="w-full h-full object-cover"
                     src="images/general-timber-2x4.png"
                     alt="2x4 timber"
-                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/114521/ffffff?text=Timber';" />
+                    onerror="this.onerror=null;this.src='https://placehold.co/96x96/227844/ffffff?text=Timber';" />
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-start justify-between gap-3">
-                    <div class="font-display font-bold text-brand-black text-sm" style="font-weight:700">2x4 Timber</div>
-                    <div class="text-xs whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 2,600</div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex min-w-0 flex-col gap-1.5">
+                    <div class="font-display font-bold text-brand-black text-sm leading-snug break-words" style="font-weight:700">2x4 Timber</div>
+                    <div class="text-xs w-max max-w-full shrink-0 whitespace-nowrap bg-brand-green/10 text-brand-green border border-brand-green/20 px-2 py-1 rounded-sm">NGN 2,600</div>
                   </div>
                   <p class="text-brand-muted text-xs leading-relaxed mt-1">Add description here.</p>
                 </div>
@@ -1254,7 +1199,7 @@
 
 <!-- WHY US -->
 <section id="why-us" class="relative z-10 bg-brand-navy py-20 md:py-28 border-t border-white/[0.08] overflow-hidden">
-  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_0%_0%,rgba(17,69,33,0.22),transparent),radial-gradient(ellipse_60%_50%_at_100%_100%,rgba(166,143,58,0.1),transparent)]"></div>
+  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_0%_0%,rgba(34,120,68,0.26),transparent),radial-gradient(ellipse_60%_50%_at_100%_100%,rgba(166,143,58,0.1),transparent)]"></div>
   <div class="max-w-7xl mx-auto px-5 sm:px-6 relative">
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       <div class="lg:col-span-6">
@@ -1344,7 +1289,7 @@
         <p class="text-brand-muted text-sm leading-relaxed flex-1">Manufacturer credentials and compliance certificates available with orders on request.</p>
       </div>
 
-      <div class="relative z-20 md:scale-[1.03] md:-my-1 bg-gradient-to-b from-brand-green-dark to-brand-green rounded-2xl p-7 md:p-8 text-center border border-brand-gold/30 flex flex-col h-full shadow-[0_24px_50px_-12px_rgba(15,69,32,0.55)] ring-2 ring-brand-gold/25">
+      <div class="relative z-20 md:scale-[1.03] md:-my-1 bg-gradient-to-b from-brand-green-dark to-brand-green rounded-2xl p-7 md:p-8 text-center border border-brand-gold/30 flex flex-col h-full shadow-[0_24px_50px_-12px_rgba(34,120,68,0.45)] ring-2 ring-brand-gold/25">
         <div class="w-16 h-16 bg-brand-green-accent/25 border border-brand-gold/35 rounded-full flex items-center justify-center mx-auto mb-5 shrink-0">
           <svg class="w-8 h-8 text-brand-green-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
