@@ -116,6 +116,7 @@
       font-size: 0.65rem;
     }
 
+    /* Solid fallback when no hero photograph is loaded */
     .hero-bg {
       background-color: #121212;
       background-image:
@@ -128,6 +129,37 @@
           rgba(255,255,255,0.02) 72px,
           rgba(255,255,255,0.02) 73px
         );
+    }
+
+    /* Darken hero photography for readable overlay text */
+    .hero-overlay {
+      background-color: rgba(10, 10, 10, 0.72);
+      background-image:
+        linear-gradient(165deg, rgba(18,18,18,0.94) 0%, rgba(34,120,68,0.2) 42%, rgba(18,18,18,0.94) 100%),
+        radial-gradient(ellipse 90% 55% at 75% 0%, rgba(34,120,68,0.16), transparent 55%),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 72px,
+          rgba(255,255,255,0.02) 72px,
+          rgba(255,255,255,0.02) 73px
+        );
+    }
+
+    .corp-photo {
+      border-radius: 0.75rem;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .corp-photo:hover {
+      transform: translateY(-2px) scale(1.015);
+      box-shadow: 0 22px 48px -20px rgba(0, 0, 0, 0.2);
+    }
+    .corp-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     input:focus, textarea:focus {
@@ -228,6 +260,7 @@
 
     <ul class="hidden md:flex items-center gap-8 lg:gap-10 text-white/80 text-sm font-body tracking-wide">
       <li><a href="#about" class="nav-link hover:text-white">About</a></li>
+      <li><a href="#how-we-operate" class="nav-link hover:text-white">Operations</a></li>
       <li><a href="#products" class="nav-link hover:text-white">Products</a></li>
       <li><a href="#why-us" class="nav-link hover:text-white">Why Us</a></li>
       <li><a href="#certification" class="nav-link hover:text-white">Quality</a></li>
@@ -247,6 +280,7 @@
 
   <div id="mobile-menu" class="md:hidden hidden bg-brand-charcoal border-t border-white/10 px-6 py-4 space-y-3" role="dialog" aria-label="Mobile menu">
     <a href="#about" class="block text-white text-sm py-2 border-b border-white/10">About</a>
+    <a href="#how-we-operate" class="block text-white text-sm py-2 border-b border-white/10">How we operate</a>
     <a href="#products" class="block text-white text-sm py-2 border-b border-white/10">Products &amp; Services</a>
     <a href="#why-us" class="block text-white text-sm py-2 border-b border-white/10">Why Choose Us</a>
     <a href="#certification" class="block text-white text-sm py-2 border-b border-white/10">Quality &amp; Certification</a>
@@ -257,9 +291,20 @@
 
 <main id="main">
 <!-- HERO -->
-<section id="hero" class="hero-bg relative min-h-[88vh] flex items-center overflow-hidden border-b border-white/[0.1] pb-14 md:pb-20">
-  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_100%_0%,rgba(34,120,68,0.24),transparent)]"></div>
-  <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-brand-green-accent/80 via-brand-green/50 to-transparent z-10"></div>
+<section id="hero" class="relative min-h-[88vh] flex items-center overflow-hidden border-b border-white/[0.1] pb-14 md:pb-20 bg-brand-black">
+  <img
+    class="absolute inset-0 z-0 h-full w-full object-cover"
+    src="images/hero-industrial-logistics-bg.jpg"
+    alt="Industrial material supply and logistics operations by IAM International Logistics"
+    width="1920"
+    height="1080"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+    onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/1a1a1a/8ee5a8?text=Hero%3A+Replace+with+company+photo';" />
+  <div class="hero-overlay pointer-events-none absolute inset-0 z-[1]" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(ellipse_70%_50%_at_100%_0%,rgba(34,120,68,0.24),transparent)]"></div>
+  <div class="absolute left-0 top-0 bottom-0 z-[2] w-px bg-gradient-to-b from-brand-green-accent/80 via-brand-green/50 to-transparent"></div>
 
   <div class="max-w-7xl mx-auto px-5 sm:px-6 pt-28 sm:pt-32 pb-12 md:pb-16 w-full relative z-10 animate-hero-in">
     <p class="text-[10px] sm:text-xs font-display tracking-[0.28em] uppercase text-white/50 mb-5 md:mb-7" style="font-weight:700">
@@ -387,6 +432,73 @@
   </div>
 </div>
 
+<!-- HOW WE OPERATE -->
+<section id="how-we-operate" class="relative z-10 bg-white py-20 md:py-28 border-t border-black/[0.05]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+    <div class="max-w-3xl mb-12 md:mb-14">
+      <div class="section-tag">Operations</div>
+      <h2 class="font-display text-brand-black leading-[1.05] mt-4 mb-4" style="font-size:clamp(2rem,4vw,3.15rem); font-weight:800">How we operate</h2>
+      <p class="text-brand-muted text-sm md:text-base leading-relaxed">
+        Procurement, warehousing discipline, and dispatch coordination — documented steps from supplier to site. Replace the placeholders below with your own yard, fleet, and project photography when ready.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <figure class="corp-photo group surface-card flex flex-col overflow-hidden border border-black/[0.06] ring-1 ring-black/[0.03]">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-brand-charcoal/10">
+          <img
+            src="images/operations-material-ready-delivery.jpg"
+            alt="Construction materials ready for project delivery"
+            width="800"
+            height="600"
+            loading="lazy"
+            class="h-full w-full object-cover"
+            onerror="this.onerror=null;this.src='https://placehold.co/800x600/227844/f5f5f0?text=Materials+ready';" />
+        </div>
+        <figcaption class="px-4 py-3 text-xs text-brand-muted font-body border-t border-black/[0.06] bg-brand-paper/90">Staged materials and QA checks before release to transport.</figcaption>
+      </figure>
+      <figure class="corp-photo group surface-card flex flex-col overflow-hidden border border-black/[0.06] ring-1 ring-black/[0.03]">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-brand-charcoal/10">
+          <img
+            src="images/operations-procurement-loading.jpg"
+            alt="Procurement and loading of industrial materials"
+            width="800"
+            height="600"
+            loading="lazy"
+            class="h-full w-full object-cover"
+            onerror="this.onerror=null;this.src='https://placehold.co/800x600/227844/f5f5f0?text=Loading+%26+procurement';" />
+        </div>
+        <figcaption class="px-4 py-3 text-xs text-brand-muted font-body border-t border-black/[0.06] bg-brand-paper/90">Loading bays, manifests, and weight-checked consignments.</figcaption>
+      </figure>
+      <figure class="corp-photo group surface-card flex flex-col overflow-hidden border border-black/[0.06] ring-1 ring-black/[0.03]">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-brand-charcoal/10">
+          <img
+            src="images/operations-logistics-transport.jpg"
+            alt="Logistics coordination and transportation process"
+            width="800"
+            height="600"
+            loading="lazy"
+            class="h-full w-full object-cover"
+            onerror="this.onerror=null;this.src='https://placehold.co/800x600/227844/f5f5f0?text=Transport+%26+routing';" />
+        </div>
+        <figcaption class="px-4 py-3 text-xs text-brand-muted font-body border-t border-black/[0.06] bg-brand-paper/90">Routing, handoffs, and status updates aligned to your programme.</figcaption>
+      </figure>
+      <figure class="corp-photo group surface-card flex flex-col overflow-hidden border border-black/[0.06] ring-1 ring-black/[0.03] sm:col-span-2 lg:col-span-1">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-brand-charcoal/10">
+          <img
+            src="images/operations-onsite-delivery.jpg"
+            alt="On-site material delivery and handling"
+            width="800"
+            height="600"
+            loading="lazy"
+            class="h-full w-full object-cover"
+            onerror="this.onerror=null;this.src='https://placehold.co/800x600/227844/f5f5f0?text=On-site+delivery';" />
+        </div>
+        <figcaption class="px-4 py-3 text-xs text-brand-muted font-body border-t border-black/[0.06] bg-brand-paper/90">Site receipt coordination and documented handover.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about" class="bg-gradient-to-b from-brand-paper via-white to-brand-paper py-20 md:py-28 border-t border-black/[0.04]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6">
@@ -444,6 +556,18 @@
         </p>
       </div>
     </div>
+
+    <figure class="corp-photo group mt-14 lg:mt-16 max-w-5xl mx-auto rounded-2xl border border-black/[0.08] ring-1 ring-black/[0.04] aspect-[21/9] min-h-[200px] max-h-[440px] bg-brand-charcoal/5">
+      <img
+        src="images/about-operations-admin.jpg"
+        alt="IAM International Logistics operations and administrative coordination"
+        width="1600"
+        height="686"
+        loading="lazy"
+        class="w-full h-full object-cover"
+        onerror="this.onerror=null;this.src='https://placehold.co/1600x686/252525/8ee5a8?text=Operations+%26+admin+photo';" />
+      <figcaption class="sr-only">IAM International Logistics operations and administrative coordination — replace with your team and office imagery.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -454,6 +578,35 @@
       <div class="section-tag section-tag--center">Products &amp; Services</div>
       <h2 class="font-display text-brand-black leading-[1.05] mt-5" style="font-size:clamp(2rem,4vw,3.15rem); font-weight:800">What we supply</h2>
       <p class="text-brand-muted mt-4 text-sm md:text-base leading-relaxed">Verified manufacturers, structured categories, and documentation-ready deliveries — aligned to how international projects run procurement.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8 mb-14 md:mb-16 max-w-5xl mx-auto">
+      <figure class="corp-photo group flex flex-col overflow-hidden rounded-2xl border border-black/[0.08] ring-1 ring-black/[0.04] bg-brand-charcoal/5">
+        <div class="aspect-[16/10] w-full overflow-hidden">
+          <img
+            src="images/services-construction-materials.jpg"
+            alt="Industrial construction materials and equipment supply"
+            width="960"
+            height="600"
+            loading="lazy"
+            class="h-full w-full object-cover"
+            onerror="this.onerror=null;this.src='https://placehold.co/960x600/227844/f5f5f0?text=Construction+materials';" />
+        </div>
+        <figcaption class="px-4 py-3 text-xs text-brand-muted font-body bg-brand-paper border-t border-black/[0.06]">Bulk and packaged construction materials — replace with yard or stock photography.</figcaption>
+      </figure>
+      <figure class="corp-photo group flex flex-col overflow-hidden rounded-2xl border border-black/[0.08] ring-1 ring-black/[0.04] bg-brand-charcoal/5">
+        <div class="aspect-[16/10] w-full overflow-hidden">
+          <img
+            src="images/services-industrial-tools.jpg"
+            alt="Industrial tools and equipment supplied for construction and logistics programmes"
+            width="960"
+            height="600"
+            loading="lazy"
+            class="h-full w-full object-cover"
+            onerror="this.onerror=null;this.src='https://placehold.co/960x600/155a32/f5f5f0?text=Tools+%26+equipment';" />
+        </div>
+        <figcaption class="px-4 py-3 text-xs text-brand-muted font-body bg-brand-paper border-t border-black/[0.06]">Power tools, lifting accessories, and site equipment — replace with catalogue shots.</figcaption>
+      </figure>
     </div>
 
     <div class="product-cards-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7 items-start">
@@ -1278,6 +1431,39 @@
       </p>
     </div>
 
+    <div class="mb-14 md:mb-16 max-w-4xl mx-auto">
+      <h3 class="font-display text-brand-black text-center text-xl md:text-2xl mb-2" style="font-weight:800">Corporate registration &amp; compliance</h3>
+      <p class="text-brand-muted text-sm text-center max-w-2xl mx-auto mb-8 leading-relaxed">Official certificates on file for client and lender due diligence. Replace the placeholder files in your site’s <span class="font-mono text-xs text-brand-black/80">images</span> folder with high-resolution scans when available.</p>
+      <div class="grid sm:grid-cols-2 gap-6 md:gap-8">
+        <figure class="corp-photo group surface-card border border-black/[0.08] rounded-xl overflow-hidden flex flex-col shadow-sm">
+          <div class="aspect-[3/4] max-h-[420px] bg-brand-paper">
+            <img
+              src="images/compliance-cac-certificate.jpg"
+              alt="CAC certificate of incorporation IAM International Logistics"
+              width="900"
+              height="1200"
+              loading="lazy"
+              class="object-contain bg-white"
+              onerror="this.onerror=null;this.src='https://placehold.co/900x1200/fafaf8/227844?text=CAC+certificate+scan';" />
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-brand-muted font-body border-t border-black/[0.06]">CAC certificate of incorporation (RC 9490657)</figcaption>
+        </figure>
+        <figure class="corp-photo group surface-card border border-black/[0.08] rounded-xl overflow-hidden flex flex-col shadow-sm">
+          <div class="aspect-[3/4] max-h-[420px] bg-brand-paper">
+            <img
+              src="images/compliance-scuml-certificate.jpg"
+              alt="SCUML certification compliance document"
+              width="900"
+              height="1200"
+              loading="lazy"
+              class="object-contain bg-white"
+              onerror="this.onerror=null;this.src='https://placehold.co/900x1200/fafaf8/227844?text=SCUML+certificate+scan';" />
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-brand-muted font-body border-t border-black/[0.06]">SCUML compliance documentation</figcaption>
+        </figure>
+      </div>
+    </div>
+
     <div class="grid sm:grid-cols-3 gap-6 md:gap-7 items-stretch">
       <div class="relative z-10 surface-card border border-black/[0.06] rounded-2xl p-7 md:p-8 text-center flex flex-col h-full">
         <div class="w-16 h-16 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-5 shrink-0">
@@ -1417,6 +1603,7 @@
       <div class="font-display font-bold text-white text-sm tracking-widest uppercase mb-5" style="font-weight:700">Quick Links</div>
       <ul class="space-y-2 text-white/50 text-sm">
         <li><a href="#about" class="hover:text-brand-green-accent transition-colors">About Us</a></li>
+        <li><a href="#how-we-operate" class="hover:text-brand-green-accent transition-colors">How we operate</a></li>
         <li><a href="#products" class="hover:text-brand-green-accent transition-colors">Products &amp; Services</a></li>
         <li><a href="#why-us" class="hover:text-brand-green-accent transition-colors">Why Choose Us</a></li>
         <li><a href="#certification" class="hover:text-brand-green-accent transition-colors">Quality &amp; Certification</a></li>
