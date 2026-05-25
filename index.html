@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IAM International Logistics Co., Ltd. — Procurement &amp; Site Supply, Nigeria</title>
-  <meta name="description" content="IAM International Logistics Co., Ltd. sources and delivers construction materials and equipment across Nigeria with supplier verification, documented batches, and coordinated dispatch."/>
-  <meta name="keywords" content="IAM International Logistics, construction procurement Nigeria, steel reinforcement, formwork, building materials, logistics, site delivery"/>
-  <meta property="og:title" content="IAM International Logistics Co., Ltd. — Procurement &amp; Site Supply"/>
-  <meta property="og:description" content="Verified sourcing, documented deliveries, and nationwide dispatch for contractors and project teams."/>
+  <title>IAM International Logistics Co., Ltd. — Procurement, Logistics &amp; Supply, Nigeria</title>
+  <meta name="description" content="IAM International Logistics Co., Ltd. provides procurement, logistics, import and export coordination, and industrial supply solutions for businesses and projects across Nigeria."/>
+  <meta name="keywords" content="IAM International Logistics, procurement Nigeria, logistics Nigeria, supply chain, import export, industrial supply, project procurement"/>
+  <meta property="og:title" content="IAM International Logistics Co., Ltd. — Procurement &amp; Logistics"/>
+  <meta property="og:description" content="Reliable procurement, coordinated logistics, and documented supply for businesses, organisations, and project teams."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="http://localhost:3000/"/>
 
@@ -44,7 +44,47 @@
     section[id] { scroll-margin-top: 104px; }
 
     main, section { position: relative; }
-    #products, #certification, #contact { isolation: isolate; }
+    #services, #capabilities, #industries, #certification, #contact { isolation: isolate; }
+
+    .catalog-table-wrap { -webkit-overflow-scrolling: touch; }
+    .catalog-table-wrap table { min-width: 420px; }
+
+    .catalog-details summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+      background: #252525;
+      color: rgba(255, 255, 255, 0.95);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      user-select: none;
+    }
+    .catalog-details summary::-webkit-details-marker { display: none; }
+    .catalog-details summary::after {
+      content: '';
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      margin-top: -4px;
+      border-right: 2px solid rgba(142, 229, 168, 0.9);
+      border-bottom: 2px solid rgba(142, 229, 168, 0.9);
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+    .catalog-details[open] summary::after {
+      transform: rotate(225deg);
+      margin-top: 2px;
+    }
+    .catalog-details[open] summary {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
     .nav-scrolled { background: rgba(18,18,18,0.97) !important; box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
 
@@ -299,13 +339,16 @@
     <ul class="hidden md:flex items-center gap-8 lg:gap-10 text-white/80 text-sm font-body tracking-wide">
       <li><a href="#about" class="nav-link hover:text-white">About</a></li>
       <li><a href="#how-we-work" class="nav-link hover:text-white">How we work</a></li>
-      <li><a href="#products" class="nav-link hover:text-white">Products</a></li>
+      <li><a href="#services" class="nav-link hover:text-white">Services</a></li>
+      <li><a href="#capabilities" class="nav-link hover:text-white">Capabilities</a></li>
       <li><a href="#why-us" class="nav-link hover:text-white">Why Us</a></li>
       <li><a href="#certification" class="nav-link hover:text-white">Quality</a></li>
+      <li><a href="files/IAM-Company-Profile.pdf" class="nav-link hover:text-white" download="IAM-International-Logistics-Company-Profile.pdf">Company profile</a></li>
       <li><a href="#contact" class="nav-link hover:text-white">Contact</a></li>
     </ul>
 
-    <div class="hidden md:flex items-center gap-3">
+    <div class="hidden md:flex items-center gap-2 lg:gap-3">
+      <a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="hidden lg:inline-flex items-center justify-center border border-white/25 hover:border-brand-green-accent/60 text-white/90 hover:text-white text-xs font-display tracking-[0.1em] uppercase px-4 py-3 rounded-lg transition-all" style="font-weight:600">PDF profile</a>
       <a href="#contact" class="inline-flex items-center justify-center bg-brand-green hover:bg-brand-green-light text-white text-xs font-display tracking-[0.12em] uppercase px-6 py-3 rounded-lg transition-all shadow-lg shadow-black/20 hover:shadow-brand-green/30 ring-1 ring-white/10" style="font-weight:700">Request a quote</a>
     </div>
 
@@ -319,9 +362,11 @@
   <div id="mobile-menu" class="md:hidden hidden bg-brand-charcoal border-t border-white/10 px-6 py-4 space-y-3" role="dialog" aria-label="Mobile menu">
     <a href="#about" class="block text-white text-sm py-2 border-b border-white/10">About</a>
     <a href="#how-we-work" class="block text-white text-sm py-2 border-b border-white/10">How we work</a>
-    <a href="#products" class="block text-white text-sm py-2 border-b border-white/10">Products &amp; Services</a>
+    <a href="#services" class="block text-white text-sm py-2 border-b border-white/10">Services</a>
+    <a href="#capabilities" class="block text-white text-sm py-2 border-b border-white/10">Capabilities</a>
     <a href="#why-us" class="block text-white text-sm py-2 border-b border-white/10">Why Choose Us</a>
     <a href="#certification" class="block text-white text-sm py-2 border-b border-white/10">Quality &amp; Certification</a>
+    <a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="block text-brand-green-accent text-sm py-2 border-b border-white/10 font-display font-bold uppercase tracking-wider" style="font-weight:700">Company profile (PDF)</a>
     <a href="#contact" class="block text-white text-sm py-2">Contact</a>
     <a href="#contact" class="inline-block mt-2 bg-brand-green text-white text-sm font-display font-bold px-5 py-2.5 rounded-sm" style="font-weight:700">REQUEST A QUOTE</a>
   </div>
@@ -348,11 +393,11 @@
     <p class="text-[10px] sm:text-xs font-display tracking-[0.26em] uppercase text-white/45 mb-6 md:mb-8" style="font-weight:700">IAM International Logistics Co., Ltd.</p>
     <div class="max-w-4xl">
       <h1 class="font-display text-white leading-[1.08] mb-6 md:mb-8" style="font-size: clamp(2rem, 4.5vw, 3.35rem); font-weight:800; letter-spacing:-.03em">
-        Reliable supply &amp; logistics for construction projects across Nigeria
+        Procurement, logistics &amp; supply solutions across Nigeria
       </h1>
 
       <p class="text-white/70 text-base sm:text-lg font-body max-w-2xl leading-relaxed mb-10 md:mb-12">
-        We source, verify, and deliver construction materials and equipment with full documentation and coordinated dispatch.
+        We procure, coordinate, and deliver for businesses, organisations, and project teams — from supplier sourcing and import support to documented dispatch nationwide.
       </p>
 
       <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-10 md:mb-12">
@@ -362,14 +407,20 @@
         <a href="#contact" class="inline-flex items-center justify-center border border-white/30 hover:border-white/55 bg-transparent hover:bg-white/[0.06] text-white font-display text-sm tracking-[0.12em] uppercase px-8 py-4 rounded-lg transition-all" style="font-weight:600">
           Contact us
         </a>
+        <a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="inline-flex items-center justify-center gap-2 border border-brand-green-accent/45 hover:border-brand-green-accent bg-brand-green/15 hover:bg-brand-green/25 text-white font-display text-sm tracking-[0.12em] uppercase px-8 py-4 rounded-lg transition-all ring-1 ring-brand-green-accent/20" style="font-weight:600">
+          <svg class="w-5 h-5 text-brand-green-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Company profile (PDF)
+        </a>
       </div>
 
       <p class="text-white/50 text-xs sm:text-sm font-body tracking-wide border-t border-white/10 pt-6 max-w-2xl leading-relaxed">
-        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Verified suppliers</span>
+        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Procurement</span>
         <span class="text-white/25 mx-2 sm:mx-3">|</span>
-        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Documented deliveries</span>
+        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Logistics</span>
         <span class="text-white/25 mx-2 sm:mx-3">|</span>
-        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Nationwide dispatch</span>
+        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Import &amp; export</span>
+        <span class="text-white/25 mx-2 sm:mx-3">|</span>
+        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Industrial supply</span>
       </p>
     </div>
   </div>
@@ -379,11 +430,13 @@
 <div class="relative z-10 border-b border-white/[0.06] bg-brand-charcoal">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 py-5 md:py-6">
     <p class="text-center text-white/55 text-xs sm:text-sm font-body tracking-wide">
-      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Verified suppliers</span>
+      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Procurement</span>
       <span class="text-white/25 mx-2 sm:mx-4">|</span>
-      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Documented deliveries</span>
+      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Logistics coordination</span>
       <span class="text-white/25 mx-2 sm:mx-4">|</span>
-      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Nationwide dispatch</span>
+      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Documented supply</span>
+      <span class="text-white/25 mx-2 sm:mx-4">|</span>
+      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Nationwide delivery</span>
     </p>
   </div>
 </div>
@@ -394,16 +447,28 @@
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       <div class="lg:col-span-6">
         <div class="section-tag section-tag--dark">About</div>
-        <h2 class="font-display text-white leading-[1.05] mt-4 mb-8" style="font-size:clamp(1.85rem,3.5vw,2.75rem); font-weight:800">Procurement you can run projects on</h2>
+        <h2 class="font-display text-white leading-[1.05] mt-4 mb-8" style="font-size:clamp(1.85rem,3.5vw,2.75rem); font-weight:800">Your procurement &amp; logistics partner</h2>
         <div class="space-y-6 text-white/65 text-sm md:text-base leading-relaxed max-w-xl">
-          <p>IAM International Logistics Co., Ltd. supports contractors, developers, and project teams with reliable sourcing and coordinated delivery of construction materials across Nigeria.</p>
-          <p>We operate a structured procurement process — from supplier verification and quality checks to dispatch scheduling — ensuring materials arrive on time, correctly documented, and aligned with project timelines.</p>
+          <p>IAM International Logistics Co., Ltd. is a registered Nigerian company focused on procurement, logistics, supply chain operations, import and export services, and project-based industrial supply.</p>
+          <p>We support businesses, organisations, contractors, and industrial operations with reliable sourcing, coordinated movement of goods, and supply solutions tailored to commercial and project requirements.</p>
         </div>
         <ul class="mt-10 space-y-4 text-sm md:text-base text-white/80 border-l-2 border-brand-green-accent/50 pl-6 max-w-xl">
-          <li><span class="font-display font-bold text-white" style="font-weight:700">Verified supplier network</span></li>
-          <li><span class="font-display font-bold text-white" style="font-weight:700">Structured procurement process</span></li>
-          <li><span class="font-display font-bold text-white" style="font-weight:700">Delivery aligned to construction schedules</span></li>
+          <li><span class="font-display font-bold text-white" style="font-weight:700">Professional procurement &amp; sourcing</span></li>
+          <li><span class="font-display font-bold text-white" style="font-weight:700">Logistics &amp; dispatch coordination</span></li>
+          <li><span class="font-display font-bold text-white" style="font-weight:700">Import, export &amp; industrial supply</span></li>
         </ul>
+        <div class="mt-10 max-w-xl rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:p-6 ring-1 ring-white/[0.06]">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <div class="font-display font-bold text-white text-sm uppercase tracking-[0.14em] mb-1" style="font-weight:700">Company profile</div>
+              <p class="text-white/55 text-sm leading-relaxed">Download our PDF overview for tenders, vendor packs, and site offices.</p>
+            </div>
+            <a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="inline-flex items-center justify-center gap-2 shrink-0 bg-brand-green hover:bg-brand-green-light text-white font-display text-xs tracking-[0.12em] uppercase px-5 py-3 rounded-lg transition-all shadow-lg shadow-black/20 ring-1 ring-white/10 whitespace-nowrap" style="font-weight:700">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Download PDF
+            </a>
+          </div>
+        </div>
       </div>
       <div class="lg:col-span-6">
         <figure class="corp-photo group rounded-2xl border border-white/10 overflow-hidden bg-brand-charcoal/40 ring-1 ring-white/[0.06]">
@@ -423,60 +488,149 @@
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section id="products" class="relative z-10 bg-brand-black text-white py-24 md:py-32 border-t border-white/10">
+<!-- SERVICES -->
+<section id="services" class="relative z-10 bg-brand-black text-white py-24 md:py-32 border-t border-white/10">
   <div class="max-w-7xl mx-auto px-5 sm:px-6">
     <div class="max-w-2xl mb-14 md:mb-16">
-      <div class="section-tag section-tag--dark">Products &amp; services</div>
-      <h2 class="font-display text-white leading-[1.05] mt-4 mb-4" style="font-size:clamp(1.9rem,3.6vw,2.85rem); font-weight:800">What we supply</h2>
-      <p class="text-white/55 text-sm md:text-base leading-relaxed">Categories we stock against project specifications — quoted with availability and the documentation path for your records.</p>
+      <div class="section-tag section-tag--dark">Core services</div>
+      <h2 class="font-display text-white leading-[1.05] mt-4 mb-4" style="font-size:clamp(1.9rem,3.6vw,2.85rem); font-weight:800">What we do</h2>
+      <p class="text-white/55 text-sm md:text-base leading-relaxed">Professional procurement, logistics, and supply solutions aligned with our registered business scope — efficiency, reliability, and timely execution for every engagement.</p>
+      <p class="mt-4 text-sm text-white/45"><a href="#capabilities" class="text-brand-green-accent hover:text-white font-display font-bold uppercase tracking-widest text-xs transition-colors" style="font-weight:700">View supply capabilities →</a></p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-      <article class="service-category-card rounded-2xl overflow-hidden flex flex-col ring-1 ring-white/[0.04]">
-        <div class="aspect-[4/3] w-full overflow-hidden bg-brand-charcoal">
-          <img src="images/Service.png" alt="" width="800" height="600" loading="lazy" class="h-full w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/800x600/1a1f1c/8ee5a8?text=Formwork';" />
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <article class="service-category-card rounded-2xl p-6 md:p-7 flex flex-col ring-1 ring-white/[0.04]">
+        <div class="w-12 h-12 rounded-xl bg-brand-green/25 border border-brand-green-accent/30 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand-green-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
         </div>
-        <div class="p-6 flex flex-col flex-1 border-t border-white/10">
-          <h3 class="font-display font-bold text-white text-lg mb-2" style="font-weight:700">Formwork materials</h3>
-          <p class="text-xs text-brand-green-accent/90 uppercase tracking-wider mb-3">H20 beams · Plywood</p>
-          <p class="text-white/55 text-sm leading-relaxed flex-1">Durable, project-ready formwork systems for structural works.</p>
-          <a href="#contact" class="mt-5 inline-flex text-xs font-display font-bold uppercase tracking-widest text-brand-green-accent hover:text-white transition-colors" style="font-weight:700">Request quote →</a>
-        </div>
+        <h3 class="font-display font-bold text-white text-lg mb-2" style="font-weight:700">Procurement services</h3>
+        <p class="text-white/55 text-sm leading-relaxed flex-1">Sourcing, supplier vetting, quotations, and purchase coordination against your specifications and timelines.</p>
+        <a href="#contact" class="mt-5 inline-flex text-xs font-display font-bold uppercase tracking-widest text-brand-green-accent hover:text-white transition-colors" style="font-weight:700">Enquire →</a>
       </article>
-      <article class="service-category-card rounded-2xl overflow-hidden flex flex-col ring-1 ring-white/[0.04]">
-        <div class="aspect-[4/3] w-full overflow-hidden bg-brand-charcoal">
-          <img src="images/whatwesupply1.png" alt="" width="800" height="600" loading="lazy" class="h-full w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/800x600/1a1f1c/8ee5a8?text=Steel';" />
+      <article class="service-category-card rounded-2xl p-6 md:p-7 flex flex-col ring-1 ring-white/[0.04]">
+        <div class="w-12 h-12 rounded-xl bg-brand-green/25 border border-brand-green-accent/30 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand-green-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
         </div>
-        <div class="p-6 flex flex-col flex-1 border-t border-white/10">
-          <h3 class="font-display font-bold text-white text-lg mb-2" style="font-weight:700">Steel &amp; reinforcement</h3>
-          <p class="text-xs text-brand-green-accent/90 uppercase tracking-wider mb-3">Rebar · Binding wire · Mesh</p>
-          <p class="text-white/55 text-sm leading-relaxed flex-1">Reinforcement materials sourced against mill documentation where applicable.</p>
-          <a href="#contact" class="mt-5 inline-flex text-xs font-display font-bold uppercase tracking-widest text-brand-green-accent hover:text-white transition-colors" style="font-weight:700">Request quote →</a>
-        </div>
+        <h3 class="font-display font-bold text-white text-lg mb-2" style="font-weight:700">Logistics services</h3>
+        <p class="text-white/55 text-sm leading-relaxed flex-1">Routing, consolidation, transport scheduling, and delivery coordination with documented handover.</p>
+        <a href="#contact" class="mt-5 inline-flex text-xs font-display font-bold uppercase tracking-widest text-brand-green-accent hover:text-white transition-colors" style="font-weight:700">Enquire →</a>
       </article>
-      <article class="service-category-card rounded-2xl overflow-hidden flex flex-col ring-1 ring-white/[0.04]">
-        <div class="aspect-[4/3] w-full overflow-hidden bg-brand-charcoal">
-          <img src="images/whatwesupply2.png" alt="" width="800" height="600" loading="lazy" class="h-full w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/800x600/1a1f1c/8ee5a8?text=Tools';" />
+      <article class="service-category-card rounded-2xl p-6 md:p-7 flex flex-col ring-1 ring-white/[0.04]">
+        <div class="w-12 h-12 rounded-xl bg-brand-green/25 border border-brand-green-accent/30 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand-green-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
-        <div class="p-6 flex flex-col flex-1 border-t border-white/10">
-          <h3 class="font-display font-bold text-white text-lg mb-2" style="font-weight:700">Tools &amp; equipment</h3>
-          <p class="text-xs text-brand-green-accent/90 uppercase tracking-wider mb-3">Power tools · Cutting machines · Site tools</p>
-          <p class="text-white/55 text-sm leading-relaxed flex-1">Equipment for site operations — specified and supplied against your programme.</p>
-          <a href="#contact" class="mt-5 inline-flex text-xs font-display font-bold uppercase tracking-widest text-brand-green-accent hover:text-white transition-colors" style="font-weight:700">Request quote →</a>
-        </div>
+        <h3 class="font-display font-bold text-white text-lg mb-2" style="font-weight:700">Import &amp; export</h3>
+        <p class="text-white/55 text-sm leading-relaxed flex-1">Cross-border supply support — coordination of inbound and outbound shipments for commercial and project needs.</p>
+        <a href="#contact" class="mt-5 inline-flex text-xs font-display font-bold uppercase tracking-widest text-brand-green-accent hover:text-white transition-colors" style="font-weight:700">Enquire →</a>
       </article>
-      <article class="service-category-card rounded-2xl overflow-hidden flex flex-col ring-1 ring-white/[0.04]">
-        <div class="aspect-[4/3] w-full overflow-hidden bg-brand-charcoal">
-          <img src="images/howweoperaate5.png" alt="" width="800" height="600" loading="lazy" class="h-full w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/800x600/1a1f1c/8ee5a8?text=Materials';" />
+      <article class="service-category-card rounded-2xl p-6 md:p-7 flex flex-col ring-1 ring-white/[0.04]">
+        <div class="w-12 h-12 rounded-xl bg-brand-green/25 border border-brand-green-accent/30 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand-green-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
         </div>
-        <div class="p-6 flex flex-col flex-1 border-t border-white/10">
-          <h3 class="font-display font-bold text-white text-lg mb-2" style="font-weight:700">General building materials</h3>
-          <p class="text-xs text-brand-green-accent/90 uppercase tracking-wider mb-3">Cement · Blocks · Aggregates</p>
-          <p class="text-white/55 text-sm leading-relaxed flex-1">Essential materials in bulk and packaged formats for civil and building works.</p>
-          <a href="#contact" class="mt-5 inline-flex text-xs font-display font-bold uppercase tracking-widest text-brand-green-accent hover:text-white transition-colors" style="font-weight:700">Request quote →</a>
-        </div>
+        <h3 class="font-display font-bold text-white text-lg mb-2" style="font-weight:700">Industrial supply</h3>
+        <p class="text-white/55 text-sm leading-relaxed flex-1">Equipment, consumables, PPE, plant spares, and industrial goods — sourced and supplied to specification.</p>
+        <a href="#capabilities" class="mt-5 inline-flex text-xs font-display font-bold uppercase tracking-widest text-white/80 hover:text-brand-green-accent transition-colors" style="font-weight:700">Capabilities →</a>
       </article>
+      <article class="service-category-card rounded-2xl p-6 md:p-7 flex flex-col ring-1 ring-white/[0.04]">
+        <div class="w-12 h-12 rounded-xl bg-brand-green/25 border border-brand-green-accent/30 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand-green-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-white text-lg mb-2" style="font-weight:700">Project-based supply</h3>
+        <p class="text-white/55 text-sm leading-relaxed flex-1">Bill-of-materials procurement and phased delivery for programmes — including construction and civil works where required.</p>
+        <a href="#contact" class="mt-5 inline-flex text-xs font-display font-bold uppercase tracking-widest text-brand-green-accent hover:text-white transition-colors" style="font-weight:700">Enquire →</a>
+      </article>
+      <article class="service-category-card rounded-2xl p-6 md:p-7 flex flex-col ring-1 ring-white/[0.04]">
+        <div class="w-12 h-12 rounded-xl bg-brand-green/25 border border-brand-green-accent/30 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand-green-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-white text-lg mb-2" style="font-weight:700">Supply chain support</h3>
+        <p class="text-white/55 text-sm leading-relaxed flex-1">Planning, tracking, and reporting so your team has visibility from order placement through delivery.</p>
+        <a href="#contact" class="mt-5 inline-flex text-xs font-display font-bold uppercase tracking-widest text-brand-green-accent hover:text-white transition-colors" style="font-weight:700">Enquire →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" class="relative z-10 bg-brand-charcoal py-16 md:py-20 border-t border-white/[0.06]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+    <div class="max-w-2xl mb-10 md:mb-12">
+      <div class="section-tag section-tag--dark">Who we serve</div>
+      <h2 class="font-display text-white leading-[1.05] mt-4 mb-3" style="font-size:clamp(1.5rem,3vw,2.25rem); font-weight:800">Sectors &amp; clients</h2>
+      <p class="text-white/55 text-sm md:text-base leading-relaxed">We work with organisations that need dependable procurement and logistics — not only building contractors.</p>
+    </div>
+    <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 text-sm">
+      <li class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white/80 font-display font-bold uppercase tracking-wider text-xs" style="font-weight:700">Construction &amp; civil works</li>
+      <li class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white/80 font-display font-bold uppercase tracking-wider text-xs" style="font-weight:700">Manufacturing &amp; industrial</li>
+      <li class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white/80 font-display font-bold uppercase tracking-wider text-xs" style="font-weight:700">Government &amp; institutions</li>
+      <li class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white/80 font-display font-bold uppercase tracking-wider text-xs" style="font-weight:700">NGOs &amp; development</li>
+      <li class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white/80 font-display font-bold uppercase tracking-wider text-xs" style="font-weight:700">Oil, gas &amp; energy</li>
+      <li class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white/80 font-display font-bold uppercase tracking-wider text-xs" style="font-weight:700">Mining &amp; infrastructure</li>
+      <li class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white/80 font-display font-bold uppercase tracking-wider text-xs" style="font-weight:700">Commercial &amp; retail</li>
+      <li class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white/80 font-display font-bold uppercase tracking-wider text-xs" style="font-weight:700">International projects</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" class="relative z-10 bg-brand-paper py-24 md:py-28 border-t border-black/[0.06]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+    <div class="max-w-2xl mb-10 md:mb-12">
+      <div class="section-tag section-tag--center">Supply capabilities</div>
+      <h2 class="font-display text-brand-black leading-[1.05] mt-4 mb-4" style="font-size:clamp(1.9rem,3.6vw,2.85rem); font-weight:800">What we can procure &amp; supply</h2>
+      <p class="text-brand-muted text-sm md:text-base leading-relaxed">Illustrative categories — we source to your bill of materials and specifications. Availability and pricing are confirmed on enquiry.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-10 md:mb-12">
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">PPE &amp; safety</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Helmets, harnesses, gloves, rain gear, welding protection, and site safety equipment.</p>
+      </article>
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">Hand tools</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Spanners, wrenches, hammers, trowels, pincers, and general workshop hand tools.</p>
+      </article>
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">Power tools &amp; accessories</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Drills, grinders, saws, batteries, cutting discs, bits, and compatible accessories.</p>
+      </article>
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">Machinery &amp; equipment</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Generators, pumps, vibrators, welding plant, and industrial machinery as specified.</p>
+      </article>
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">Electrical materials</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Cables, extension reels, plugs, testers, and electrical consumables for site and plant.</p>
+      </article>
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">Consumables &amp; chemicals</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Welding consumables, adhesives, tapes, paints, cutting disks, and industrial consumables.</p>
+      </article>
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">Construction &amp; industrial materials</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Cementitious products, reinforcement consumables, geotextiles, and project-grade materials.</p>
+      </article>
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">Lifting &amp; rigging</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Chain blocks, shackles, slings, jacks, and rigging accessories for safe lifts.</p>
+      </article>
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">Measuring &amp; survey</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Levels, tapes, scales, and survey accessories for field and QA teams.</p>
+      </article>
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">Water &amp; utilities</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Hoses, PVC, pumps, filters, and water-handling equipment for site operations.</p>
+      </article>
+      <article class="surface-card border border-black/[0.08] rounded-2xl p-6 flex flex-col shadow-sm lg:col-span-3 ring-1 ring-brand-green/10 bg-brand-green/[0.04]">
+        <h3 class="font-display font-bold text-brand-black text-base mb-2" style="font-weight:700">Custom &amp; non-catalogue items</h3>
+        <p class="text-brand-muted text-sm leading-relaxed flex-1">Requirements not shown above are still in scope — we procure against your specification, including import coordination where needed.</p>
+      </article>
+    </div>
+
+    <div class="max-w-2xl mx-auto text-center rounded-2xl border border-black/[0.08] bg-white px-6 py-8 md:px-10 md:py-10 shadow-sm ring-1 ring-brand-green/10">
+      <p class="text-brand-muted text-sm md:text-base leading-relaxed mb-6">Send your material list, specifications, or procurement brief — we will confirm availability and return a quotation.</p>
+      <a href="#contact" class="inline-flex items-center justify-center bg-brand-green hover:bg-brand-green-dark text-white font-display text-sm tracking-[0.12em] uppercase px-8 py-4 rounded-lg transition-all shadow-lg shadow-brand-green/25 ring-1 ring-black/5" style="font-weight:700">Request a quote</a>
     </div>
   </div>
 </section>
@@ -486,8 +640,8 @@
   <div class="max-w-7xl mx-auto px-5 sm:px-6">
     <div class="max-w-2xl mb-14 md:mb-16">
       <div class="section-tag">How we work</div>
-      <h2 class="font-display text-brand-black leading-[1.05] mt-4 mb-4" style="font-size:clamp(1.9rem,3.6vw,2.85rem); font-weight:800">From sourcing to site</h2>
-      <p class="text-brand-muted text-sm md:text-base leading-relaxed">Four stages — each with clear accountability and records you can file.</p>
+      <h2 class="font-display text-brand-black leading-[1.05] mt-4 mb-4" style="font-size:clamp(1.9rem,3.6vw,2.85rem); font-weight:800">From enquiry to delivery</h2>
+      <p class="text-brand-muted text-sm md:text-base leading-relaxed">Four stages — procurement, verification, logistics, and handover with records your team can file.</p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
       <figure class="corp-photo group flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
@@ -497,7 +651,7 @@
         <figcaption class="px-4 py-4 text-left border-t border-black/5">
           <span class="font-display font-bold text-brand-green text-xs tracking-widest uppercase block mb-1" style="font-weight:700">01</span>
           <span class="font-display font-bold text-brand-black text-sm block mb-2" style="font-weight:700">Sourcing &amp; procurement</span>
-          <span class="text-brand-muted text-xs leading-relaxed">Materials sourced from verified suppliers based on project requirements.</span>
+          <span class="text-brand-muted text-xs leading-relaxed">Goods sourced from verified suppliers against your specifications and commercial terms.</span>
         </figcaption>
       </figure>
       <figure class="corp-photo group flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
@@ -526,8 +680,8 @@
         </div>
         <figcaption class="px-4 py-4 text-left border-t border-black/5">
           <span class="font-display font-bold text-brand-green text-xs tracking-widest uppercase block mb-1" style="font-weight:700">04</span>
-          <span class="font-display font-bold text-brand-black text-sm block mb-2" style="font-weight:700">Site delivery &amp; handover</span>
-          <span class="text-brand-muted text-xs leading-relaxed">Confirmed delivery with documented handover to site teams.</span>
+          <span class="font-display font-bold text-brand-black text-sm block mb-2" style="font-weight:700">Delivery &amp; handover</span>
+          <span class="text-brand-muted text-xs leading-relaxed">Confirmed delivery with documented handover to your receiving team or site.</span>
         </figcaption>
       </figure>
     </div>
@@ -541,32 +695,32 @@
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       <div class="lg:col-span-6">
         <div class="section-tag section-tag--dark">Why us</div>
-        <h2 class="font-display text-white leading-[1.05] mt-4 mb-6" style="font-size:clamp(1.85rem,3.5vw,2.75rem); font-weight:800">Evidence-led supply</h2>
-        <p class="text-white/55 text-sm md:text-base leading-relaxed mb-10 max-w-xl border-l-2 border-brand-green-accent/35 pl-5">Contractors and project offices get clear answers: where materials came from, how they were released, and what arrived on site.</p>
+        <h2 class="font-display text-white leading-[1.05] mt-4 mb-6" style="font-size:clamp(1.85rem,3.5vw,2.75rem); font-weight:800">Why choose IAM</h2>
+        <p class="text-white/55 text-sm md:text-base leading-relaxed mb-10 max-w-xl border-l-2 border-brand-green-accent/35 pl-5">Clients get clear answers on sourcing, release, and delivery — with professionalism, integrity, and timely execution at the centre of every engagement.</p>
 
         <ul class="green-bullet">
           <li class="text-white/75 text-sm leading-relaxed">
             <div class="min-w-0 flex-1">
-              <span class="font-display font-bold text-white text-[15px] block mb-1" style="font-weight:700">Verified materials only</span>
-              All materials sourced from approved and verified suppliers.
+              <span class="font-display font-bold text-white text-[15px] block mb-1" style="font-weight:700">Professional procurement</span>
+              Structured sourcing and supplier management for commercial and project needs.
             </div>
           </li>
           <li class="text-white/75 text-sm leading-relaxed">
             <div class="min-w-0 flex-1">
-              <span class="font-display font-bold text-white text-[15px] block mb-1" style="font-weight:700">Structured supply chain</span>
-              Consistent sourcing and availability across multiple categories.
+              <span class="font-display font-bold text-white text-[15px] block mb-1" style="font-weight:700">Reliable logistics coordination</span>
+              Routing, dispatch, and delivery aligned with your operational schedule.
             </div>
           </li>
           <li class="text-white/75 text-sm leading-relaxed">
             <div class="min-w-0 flex-1">
               <span class="font-display font-bold text-white text-[15px] block mb-1" style="font-weight:700">Documentation &amp; traceability</span>
-              Full records including supplier details and delivery documentation.
+              Supplier records, release checks, and delivery paperwork for audit and control.
             </div>
           </li>
           <li class="text-white/75 text-sm leading-relaxed">
             <div class="min-w-0 flex-1">
-              <span class="font-display font-bold text-white text-[15px] block mb-1" style="font-weight:700">Coordinated dispatch</span>
-              Delivery aligned with construction schedules and site readiness.
+              <span class="font-display font-bold text-white text-[15px] block mb-1" style="font-weight:700">Flexible, scalable solutions</span>
+              From single purchase orders to multi-phase project supply and import support.
             </div>
           </li>
         </ul>
@@ -598,7 +752,7 @@
       <div class="section-tag section-tag--center">Quality &amp; certification</div>
       <h2 class="font-display text-brand-black leading-[1.05] mt-5 mb-5" style="font-size:clamp(2rem,4vw,3.15rem); font-weight:800">Quality you can document</h2>
       <p class="text-brand-muted text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-        Supplier certifications, batch traceability, and delivery documentation — structured for site QS, project control, and finance.
+        Corporate registration, supplier documentation, and delivery records — structured for procurement, operations, and finance teams.
       </p>
     </div>
 
@@ -712,7 +866,7 @@
     <div class="flex flex-col items-center text-center mb-14 md:mb-16 max-w-2xl mx-auto">
       <div class="section-tag section-tag--center">Contact</div>
       <h2 class="font-display text-brand-black leading-[1.05] mt-5" style="font-size:clamp(2rem,4vw,3.15rem); font-weight:800">Enquiries &amp; quotations</h2>
-      <p class="text-brand-muted mt-4 text-sm md:text-base leading-relaxed">Send your material list or project requirements — we will respond with availability and quotation.</p>
+      <p class="text-brand-muted mt-4 text-sm md:text-base leading-relaxed">Send your procurement requirement, material list, or logistics brief — we will respond with availability and quotation.</p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-12 md:gap-14 items-start">
@@ -735,6 +889,17 @@
           <div>
             <div class="font-display font-bold text-brand-black text-base mb-0.5" style="font-weight:700">Email</div>
             <a href="mailto:info@iamcorperate.com" class="text-brand-green text-sm hover:underline">info@iamcorperate.com</a>
+          </div>
+        </div>
+
+        <div class="surface-card border border-black/[0.06] rounded-2xl p-6 flex items-start gap-4">
+          <div class="w-11 h-11 bg-brand-charcoal rounded-xl flex items-center justify-center flex-shrink-0 ring-1 ring-brand-green/30 shadow-md shadow-black/10">
+            <svg class="w-5 h-5 text-brand-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="flex-1">
+            <div class="font-display font-bold text-brand-black text-base mb-0.5" style="font-weight:700">Company profile</div>
+            <p class="text-brand-muted text-sm mb-3">PDF overview for procurement and project files.</p>
+            <a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="inline-flex items-center justify-center bg-brand-green hover:bg-brand-green-dark text-white text-xs font-display font-bold tracking-widest uppercase px-5 py-2.5 rounded-lg transition-colors ring-1 ring-black/5" style="font-weight:700">Download PDF</a>
           </div>
         </div>
 
@@ -772,7 +937,7 @@
 
       <div class="surface-card border border-black/[0.08] rounded-2xl p-8 md:p-10 ring-1 ring-brand-green/10 shadow-lg shadow-black/[0.04]">
         <h3 class="font-display font-bold text-brand-black text-2xl mb-2" style="font-weight:700">Send us a message</h3>
-        <p class="text-brand-muted text-sm mb-8 leading-relaxed">Include quantities, specifications, and delivery window where possible.</p>
+        <p class="text-brand-muted text-sm mb-8 leading-relaxed">Include item descriptions, quantities, delivery location, and timeline where possible.</p>
         <form class="space-y-4" id="contact-form">
           <div>
             <label class="block text-xs font-body font-semibold text-brand-steel tracking-widest uppercase mb-2" style="font-weight:600">Full Name *</label>
@@ -788,7 +953,7 @@
           </div>
           <div>
             <label class="block text-xs font-body font-semibold text-brand-steel tracking-widest uppercase mb-2" style="font-weight:600">Message / Request *</label>
-            <textarea id="fmessage" name="message" rows="5" placeholder="Describe what materials or services you need..." class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-sm font-body text-brand-black placeholder-gray-400 transition-all resize-y min-h-[120px] shadow-sm"></textarea>
+            <textarea id="fmessage" name="message" rows="5" placeholder="Describe your procurement, logistics, or supply requirement..." class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-sm font-body text-brand-black placeholder-gray-400 transition-all resize-y min-h-[120px] shadow-sm"></textarea>
           </div>
           <button type="submit" id="contact-submit" class="w-full bg-gradient-to-r from-brand-green to-brand-green-dark hover:from-brand-green-light hover:to-brand-green text-white font-display font-bold text-sm tracking-[0.14em] uppercase py-4 rounded-xl transition-all shadow-lg shadow-brand-green/25 ring-1 ring-white/10" style="font-weight:700">
             Send message
@@ -814,7 +979,7 @@
           <div class="text-brand-green-accent text-xs tracking-widest uppercase">LOGISTICS CO., LTD.</div>
         </div>
       </div>
-      <p class="text-white/50 text-sm leading-relaxed">Documented procurement and coordinated dispatch for construction programmes across Nigeria.</p>
+      <p class="text-white/50 text-sm leading-relaxed">Procurement, logistics, import and export coordination, and industrial supply across Nigeria.</p>
       <div class="mt-4 inline-block bg-white/5 border border-white/10 text-white/40 text-xs px-3 py-1.5 rounded-sm font-body">RC 9490657 • Incorporated 15 Apr 2026</div>
     </div>
 
@@ -823,9 +988,12 @@
       <ul class="space-y-2 text-white/50 text-sm">
         <li><a href="#about" class="hover:text-brand-green-accent transition-colors">About Us</a></li>
         <li><a href="#how-we-work" class="hover:text-brand-green-accent transition-colors">How we work</a></li>
-        <li><a href="#products" class="hover:text-brand-green-accent transition-colors">Products &amp; Services</a></li>
+        <li><a href="#services" class="hover:text-brand-green-accent transition-colors">Services</a></li>
+        <li><a href="#capabilities" class="hover:text-brand-green-accent transition-colors">Capabilities</a></li>
+        <li><a href="#industries" class="hover:text-brand-green-accent transition-colors">Sectors</a></li>
         <li><a href="#why-us" class="hover:text-brand-green-accent transition-colors">Why Choose Us</a></li>
         <li><a href="#certification" class="hover:text-brand-green-accent transition-colors">Quality &amp; Certification</a></li>
+        <li><a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="hover:text-brand-green-accent transition-colors">Company profile (PDF)</a></li>
         <li><a href="#contact" class="hover:text-brand-green-accent transition-colors">Contact Us</a></li>
       </ul>
     </div>
@@ -979,6 +1147,7 @@
       }
     });
   }
+
 </script>
 </body>
 </html>
