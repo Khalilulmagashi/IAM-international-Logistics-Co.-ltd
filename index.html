@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var path = location.pathname.replace(/\/index\.html$/i, '/');
+      if (!path.endsWith('/')) path += '/';
+      var base = document.createElement('base');
+      base.href = path || '/';
+      document.head.insertBefore(base, document.head.firstChild);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IAM International Logistics Co., Ltd. — Procurement, Logistics &amp; Supply, Nigeria</title>
   <meta name="description" content="IAM International Logistics Co., Ltd. provides procurement, logistics, import and export coordination, and industrial supply solutions for businesses and projects across Nigeria."/>
@@ -343,12 +352,12 @@
       <li><a href="#capabilities" class="nav-link hover:text-white">Capabilities</a></li>
       <li><a href="#why-us" class="nav-link hover:text-white">Why Us</a></li>
       <li><a href="#certification" class="nav-link hover:text-white">Quality</a></li>
-      <li><a href="files/IAM-Company-Profile.pdf" class="nav-link hover:text-white" download="IAM-International-Logistics-Company-Profile.pdf">Company profile</a></li>
+      <li><a href="./files/IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" class="nav-link hover:text-white" download="IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf">Company profile</a></li>
       <li><a href="#contact" class="nav-link hover:text-white">Contact</a></li>
     </ul>
 
     <div class="hidden md:flex items-center gap-2 lg:gap-3">
-      <a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="hidden lg:inline-flex items-center justify-center border border-white/25 hover:border-brand-green-accent/60 text-white/90 hover:text-white text-xs font-display tracking-[0.1em] uppercase px-4 py-3 rounded-lg transition-all" style="font-weight:600">PDF profile</a>
+      <a href="./files/IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" download="IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" class="hidden lg:inline-flex items-center justify-center border border-white/25 hover:border-brand-green-accent/60 text-white/90 hover:text-white text-xs font-display tracking-[0.1em] uppercase px-4 py-3 rounded-lg transition-all" style="font-weight:600">PDF profile</a>
       <a href="#contact" class="inline-flex items-center justify-center bg-brand-green hover:bg-brand-green-light text-white text-xs font-display tracking-[0.12em] uppercase px-6 py-3 rounded-lg transition-all shadow-lg shadow-black/20 hover:shadow-brand-green/30 ring-1 ring-white/10" style="font-weight:700">Request a quote</a>
     </div>
 
@@ -366,7 +375,7 @@
     <a href="#capabilities" class="block text-white text-sm py-2 border-b border-white/10">Capabilities</a>
     <a href="#why-us" class="block text-white text-sm py-2 border-b border-white/10">Why Choose Us</a>
     <a href="#certification" class="block text-white text-sm py-2 border-b border-white/10">Quality &amp; Certification</a>
-    <a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="block text-brand-green-accent text-sm py-2 border-b border-white/10 font-display font-bold uppercase tracking-wider" style="font-weight:700">Company profile (PDF)</a>
+    <a href="./files/IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" download="IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" class="block text-brand-green-accent text-sm py-2 border-b border-white/10 font-display font-bold uppercase tracking-wider" style="font-weight:700">Company profile (PDF)</a>
     <a href="#contact" class="block text-white text-sm py-2">Contact</a>
     <a href="#contact" class="inline-block mt-2 bg-brand-green text-white text-sm font-display font-bold px-5 py-2.5 rounded-sm" style="font-weight:700">REQUEST A QUOTE</a>
   </div>
@@ -390,9 +399,9 @@
   <div class="absolute left-0 top-0 bottom-0 z-[2] w-px bg-gradient-to-b from-brand-green-accent/80 via-brand-green/50 to-transparent"></div>
 
   <div class="max-w-7xl mx-auto px-5 sm:px-6 pt-28 sm:pt-32 pb-16 md:pb-24 w-full relative z-10 animate-hero-in">
-    <p class="text-[10px] sm:text-xs font-display tracking-[0.26em] uppercase text-white/45 mb-6 md:mb-8" style="font-weight:700">IAM International Logistics Co., Ltd.</p>
+    <p class="text-xs sm:text-sm font-display tracking-[0.22em] uppercase text-brand-green-accent/90 mb-4 md:mb-5" style="font-weight:700">IAM International Logistics Co., Ltd.</p>
     <div class="max-w-4xl">
-      <h1 class="font-display text-white leading-[1.08] mb-6 md:mb-8" style="font-size: clamp(2rem, 4.5vw, 3.35rem); font-weight:800; letter-spacing:-.03em">
+      <h1 class="font-display text-white leading-[1.08] mb-6 md:mb-8" style="font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight:800; letter-spacing:-.03em">
         Procurement, logistics &amp; supply solutions across Nigeria
       </h1>
 
@@ -407,39 +416,24 @@
         <a href="#contact" class="inline-flex items-center justify-center border border-white/30 hover:border-white/55 bg-transparent hover:bg-white/[0.06] text-white font-display text-sm tracking-[0.12em] uppercase px-8 py-4 rounded-lg transition-all" style="font-weight:600">
           Contact us
         </a>
-        <a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="inline-flex items-center justify-center gap-2 border border-brand-green-accent/45 hover:border-brand-green-accent bg-brand-green/15 hover:bg-brand-green/25 text-white font-display text-sm tracking-[0.12em] uppercase px-8 py-4 rounded-lg transition-all ring-1 ring-brand-green-accent/20" style="font-weight:600">
+        <a href="./files/IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" download="IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" class="inline-flex items-center justify-center gap-2 border border-brand-green-accent/45 hover:border-brand-green-accent bg-brand-green/15 hover:bg-brand-green/25 text-white font-display text-sm tracking-[0.12em] uppercase px-8 py-4 rounded-lg transition-all ring-1 ring-brand-green-accent/20" style="font-weight:600">
           <svg class="w-5 h-5 text-brand-green-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           Company profile (PDF)
         </a>
       </div>
 
-      <p class="text-white/50 text-xs sm:text-sm font-body tracking-wide border-t border-white/10 pt-6 max-w-2xl leading-relaxed">
-        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Procurement</span>
-        <span class="text-white/25 mx-2 sm:mx-3">|</span>
-        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Logistics</span>
-        <span class="text-white/25 mx-2 sm:mx-3">|</span>
-        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Import &amp; export</span>
-        <span class="text-white/25 mx-2 sm:mx-3">|</span>
-        <span class="text-white/65 font-display uppercase tracking-[0.18em]" style="font-weight:700">Industrial supply</span>
+      <p class="text-white/40 text-[10px] sm:text-[11px] font-body tracking-wide border-t border-white/10 pt-5 max-w-2xl leading-relaxed">
+        <span class="text-white/50 font-display uppercase tracking-[0.14em]" style="font-weight:600">Procurement</span>
+        <span class="text-white/20 mx-2 sm:mx-2.5">·</span>
+        <span class="text-white/50 font-display uppercase tracking-[0.14em]" style="font-weight:600">Logistics</span>
+        <span class="text-white/20 mx-2 sm:mx-2.5">·</span>
+        <span class="text-white/50 font-display uppercase tracking-[0.14em]" style="font-weight:600">Import &amp; export</span>
+        <span class="text-white/20 mx-2 sm:mx-2.5">·</span>
+        <span class="text-white/50 font-display uppercase tracking-[0.14em]" style="font-weight:600">Industrial supply</span>
       </p>
     </div>
   </div>
 </section>
-
-<!-- TRUST STRIP -->
-<div class="relative z-10 border-b border-white/[0.06] bg-brand-charcoal">
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 py-5 md:py-6">
-    <p class="text-center text-white/55 text-xs sm:text-sm font-body tracking-wide">
-      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Procurement</span>
-      <span class="text-white/25 mx-2 sm:mx-4">|</span>
-      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Logistics coordination</span>
-      <span class="text-white/25 mx-2 sm:mx-4">|</span>
-      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Documented supply</span>
-      <span class="text-white/25 mx-2 sm:mx-4">|</span>
-      <span class="text-white/80 font-display uppercase tracking-[0.16em]" style="font-weight:700">Nationwide delivery</span>
-    </p>
-  </div>
-</div>
 
 <!-- ABOUT -->
 <section id="about" class="relative z-10 bg-brand-black text-white py-24 md:py-32 border-t border-white/10">
@@ -463,7 +457,7 @@
               <div class="font-display font-bold text-white text-sm uppercase tracking-[0.14em] mb-1" style="font-weight:700">Company profile</div>
               <p class="text-white/55 text-sm leading-relaxed">Download our PDF overview for tenders, vendor packs, and site offices.</p>
             </div>
-            <a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="inline-flex items-center justify-center gap-2 shrink-0 bg-brand-green hover:bg-brand-green-light text-white font-display text-xs tracking-[0.12em] uppercase px-5 py-3 rounded-lg transition-all shadow-lg shadow-black/20 ring-1 ring-white/10 whitespace-nowrap" style="font-weight:700">
+            <a href="./files/IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" download="IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" class="inline-flex items-center justify-center gap-2 shrink-0 bg-brand-green hover:bg-brand-green-light text-white font-display text-xs tracking-[0.12em] uppercase px-5 py-3 rounded-lg transition-all shadow-lg shadow-black/20 ring-1 ring-white/10 whitespace-nowrap" style="font-weight:700">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
               Download PDF
             </a>
@@ -899,7 +893,7 @@
           <div class="flex-1">
             <div class="font-display font-bold text-brand-black text-base mb-0.5" style="font-weight:700">Company profile</div>
             <p class="text-brand-muted text-sm mb-3">PDF overview for procurement and project files.</p>
-            <a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="inline-flex items-center justify-center bg-brand-green hover:bg-brand-green-dark text-white text-xs font-display font-bold tracking-widest uppercase px-5 py-2.5 rounded-lg transition-colors ring-1 ring-black/5" style="font-weight:700">Download PDF</a>
+            <a href="./files/IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" download="IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" class="inline-flex items-center justify-center bg-brand-green hover:bg-brand-green-dark text-white text-xs font-display font-bold tracking-widest uppercase px-5 py-2.5 rounded-lg transition-colors ring-1 ring-black/5" style="font-weight:700">Download PDF</a>
           </div>
         </div>
 
@@ -993,7 +987,7 @@
         <li><a href="#industries" class="hover:text-brand-green-accent transition-colors">Sectors</a></li>
         <li><a href="#why-us" class="hover:text-brand-green-accent transition-colors">Why Choose Us</a></li>
         <li><a href="#certification" class="hover:text-brand-green-accent transition-colors">Quality &amp; Certification</a></li>
-        <li><a href="files/IAM-Company-Profile.pdf" download="IAM-International-Logistics-Company-Profile.pdf" class="hover:text-brand-green-accent transition-colors">Company profile (PDF)</a></li>
+        <li><a href="./files/IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" download="IAM_INTERNATIONAL_LOGISTICS_CO_LTD_COMPANY_PROFILE.pdf" class="hover:text-brand-green-accent transition-colors">Company profile (PDF)</a></li>
         <li><a href="#contact" class="hover:text-brand-green-accent transition-colors">Contact Us</a></li>
       </ul>
     </div>
