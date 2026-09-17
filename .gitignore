@@ -1,0 +1,24 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# Dependencies
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Logs and dumps
+*.log
+npm-debug.log*
+
+# Local extracts
+files/_extract.txt

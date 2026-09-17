@@ -1,0 +1,95 @@
+{
+  "categories": [
+    {
+      "id": "construction",
+      "name": "Construction Materials & Hardware",
+      "zh": "建筑材料、五金供应",
+      "page": "products-construction.html",
+      "availability": "Available for sourcing upon request. Bulk supply available upon enquiry.",
+      "items": [
+        { "name": "Formwork materials", "subcategory": "Formwork", "origin": "China / as specified", "unit": "lot", "availability": "Upon enquiry" },
+        { "name": "Plywood & marine boards", "subcategory": "Boards", "origin": "China / as specified", "unit": "sheet", "availability": "Upon enquiry" },
+        { "name": "H20 beams", "subcategory": "Formwork", "origin": "China / as specified", "unit": "pcs", "availability": "Upon enquiry" },
+        { "name": "Scaffolding", "subcategory": "Access", "origin": "China / as specified", "unit": "set", "availability": "Upon enquiry" },
+        { "name": "Pipes and fittings", "subcategory": "MEP", "origin": "China / as specified", "unit": "m", "availability": "Upon enquiry" },
+        { "name": "General construction supplies", "subcategory": "General", "origin": "China / Nigeria", "unit": "lot", "availability": "Upon enquiry" }
+      ]
+    },
+    {
+      "id": "hardware",
+      "name": "Hardware & Tools",
+      "zh": "五金供应",
+      "page": "products-hardware.html",
+      "availability": "Available for sourcing upon request.",
+      "items": [
+        { "name": "Bolts, nuts, washers, screws, nails, anchors", "subcategory": "Fasteners", "unit": "kg/box", "availability": "Upon enquiry" },
+        { "name": "Hand tools", "subcategory": "Tools", "unit": "pcs", "availability": "Upon enquiry" },
+        { "name": "Power tools", "subcategory": "Tools", "unit": "pcs", "availability": "Upon enquiry" },
+        { "name": "Construction accessories", "subcategory": "Accessories", "unit": "lot", "availability": "Upon enquiry" }
+      ]
+    },
+    {
+      "id": "steel",
+      "name": "Steel Products",
+      "zh": "螺纹钢、钢绞线、各类钢材、型材",
+      "page": "products-steel.html",
+      "availability": "Bulk quantities available upon enquiry.",
+      "items": [
+        { "name": "Rebar", "subcategory": "Reinforcement", "unit": "MT", "availability": "Upon enquiry" },
+        { "name": "Prestressed steel strand", "subcategory": "Strand", "unit": "MT", "availability": "Upon enquiry" },
+        { "name": "Steel wire", "subcategory": "Wire", "unit": "MT", "availability": "Upon enquiry" },
+        { "name": "H-beam / I-beam / U-channel", "subcategory": "Sections", "unit": "MT", "availability": "Upon enquiry" },
+        { "name": "Angle, flat, round and square bar", "subcategory": "Bars", "unit": "MT", "availability": "Upon enquiry" },
+        { "name": "Steel plate, pipe, galvanized and stainless", "subcategory": "Plate & pipe", "unit": "MT", "availability": "Upon enquiry" }
+      ]
+    },
+    {
+      "id": "machinery",
+      "name": "Machinery & Equipment",
+      "zh": "大型、中型、小型机械设备供应",
+      "page": "products-machinery.html",
+      "availability": "Sourced to specification. New or used subject to availability.",
+      "items": [
+        { "name": "Heavy machinery (excavators, loaders, cranes, rollers, graders)", "subcategory": "Heavy", "unit": "unit", "availability": "Upon enquiry" },
+        { "name": "Concrete equipment and generators", "subcategory": "Heavy", "unit": "unit", "availability": "Upon enquiry" },
+        { "name": "Medium equipment (welders, compressors, pumps, mixers)", "subcategory": "Medium", "unit": "unit", "availability": "Upon enquiry" },
+        { "name": "Small equipment (vibrators, grinders, drills, saws, washers)", "subcategory": "Small", "unit": "unit", "availability": "Upon enquiry" }
+      ]
+    },
+    {
+      "id": "household",
+      "name": "Household & Consumer Goods",
+      "zh": "生活用品供应",
+      "page": "products-household.html",
+      "availability": "Available for sourcing upon request.",
+      "items": [
+        { "name": "Household products", "subcategory": "Home", "availability": "Upon enquiry" },
+        { "name": "Furniture and office furniture", "subcategory": "Furniture", "availability": "Upon enquiry" },
+        { "name": "Kitchen, storage and cleaning equipment", "subcategory": "Kitchen", "availability": "Upon enquiry" },
+        { "name": "Lighting, hotel and school supplies", "subcategory": "Commercial", "availability": "Upon enquiry" }
+      ]
+    },
+    {
+      "id": "ppe",
+      "name": "PPE & Safety",
+      "zh": "",
+      "page": "products-ppe.html",
+      "availability": "Available for sourcing upon request.",
+      "items": [
+        { "name": "Helmets, harnesses, gloves, goggles", "subcategory": "PPE", "availability": "Upon enquiry" },
+        { "name": "Welding protection and rain gear", "subcategory": "PPE", "availability": "Upon enquiry" }
+      ]
+    },
+    {
+      "id": "electrical",
+      "name": "Electrical & Industrial Supplies",
+      "zh": "",
+      "page": "products-electrical.html",
+      "availability": "Available for sourcing upon request.",
+      "items": [
+        { "name": "Cables, extension reels, plugs and testers", "subcategory": "Electrical", "availability": "Upon enquiry" },
+        { "name": "Industrial consumables", "subcategory": "Consumables", "availability": "Upon enquiry" }
+      ]
+    }
+  ]
+}

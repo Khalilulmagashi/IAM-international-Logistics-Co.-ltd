@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <script>
+    (function () {
+      var path = location.pathname.replace(/\/index\.html$/i, "/");
+      path = path.replace(/\/[^/]+\.html$/i, "/");
+      if (!path.endsWith("/")) path += "/";
+      var base = document.createElement("base");
+      base.href = path || "/";
+      document.head.insertBefore(base, document.head.firstChild);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Nigerian Businesses &amp; Projects — IAM</title>
+  <meta name="description" content="Tell us what you need. IAM sources from manufacturers, verifies specifications, coordinates shipping and helps deliver to Nigeria."/>
+  <link rel="canonical" href="https://iamcorperate.com/nigerian-buyers.html"/>
+  <meta property="og:title" content="For Nigerian Businesses & Projects"/>
+  <meta property="og:description" content="Tell us what you need. IAM sources from manufacturers, verifies specifications, coordinates shipping and helps deliver to Nigeria."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://iamcorperate.com/nigerian-buyers.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./css/site.css"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IAM International Logistics Co., Ltd.",
+    "url": "https://iamcorperate.com/",
+    "email": "info@iamcorperate.com",
+    "telephone": "+2348101771640",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gwale",
+      "addressRegion": "Kano State",
+      "addressCountry": "NG"
+    },
+    "description": "China–Nigeria procurement, trading, industrial supply and logistics."
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav id="iam-nav"></nav>
+<main id="main">
+<section class="page-hero"><div class="wrap">
+<p class="kicker">For Nigerian businesses &amp; projects</p>
+<h1>Tell us what you need</h1>
+<p>We source from trusted manufacturers, verify specifications, coordinate shipping and help deliver to Nigeria.</p>
+<div class="cta-row"><a class="btn btn-gold" href="./quote.html">Send your requirement</a></div>
+</div></section>
+<section class="section"><div class="wrap">
+<p class="lead">Typical buyers include contractors, construction companies, infrastructure projects, manufacturers, factories, dealers, wholesalers, corporate organisations and project owners.</p>
+<p class="lead">Send a material list, drawings or photographs. Availability and pricing are confirmed on enquiry.</p>
+</div></section></main>
+<footer id="iam-footer"></footer>
+<script src="./js/site.js"></script>
+<script src="./js/forms.js"></script>
+<script>IAM.init("contact"); if (window.IAMForms) IAMForms.bind();</script>
+</body>
+</html>

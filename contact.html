@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <script>
+    (function () {
+      var path = location.pathname.replace(/\/index\.html$/i, "/");
+      path = path.replace(/\/[^/]+\.html$/i, "/");
+      if (!path.endsWith("/")) path += "/";
+      var base = document.createElement("base");
+      base.href = path || "/";
+      document.head.insertBefore(base, document.head.firstChild);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — IAM International Logistics, Kano</title>
+  <meta name="description" content="Gwale, Kano. Phone +234 810 177 1640, +234 902 027 2115, +234 703 706 0269. info@iamcorperate.com"/>
+  <link rel="canonical" href="https://iamcorperate.com/contact.html"/>
+  <meta property="og:title" content="Contact"/>
+  <meta property="og:description" content="Gwale, Kano. Phone +234 810 177 1640, +234 902 027 2115, +234 703 706 0269. info@iamcorperate.com"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://iamcorperate.com/contact.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./css/site.css"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IAM International Logistics Co., Ltd.",
+    "url": "https://iamcorperate.com/",
+    "email": "info@iamcorperate.com",
+    "telephone": "+2348101771640",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gwale",
+      "addressRegion": "Kano State",
+      "addressCountry": "NG"
+    },
+    "description": "China–Nigeria procurement, trading, industrial supply and logistics."
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav id="iam-nav"></nav>
+<main id="main">
+<section class="page-hero"><div class="wrap">
+<p class="kicker">Contact</p>
+<h1>IAM International Logistics Co., Ltd.</h1>
+<p>Gwale, Gwale LGA, Kano State, Nigeria</p>
+<div class="cta-row"><a class="btn btn-gold" href="./quote.html">Request a quote</a> <a class="btn btn-outline" href="https://wa.me/2348101771640" data-track="whatsapp_click">WhatsApp</a></div>
+</div></section>
+<section class="section"><div class="wrap grid-2">
+<div>
+  <h2 class="section-title">Phones</h2>
+  <div class="contact-line">
+    <a href="tel:+2348101771640" data-track="phone_click">+234 810 177 1640</a>
+    <a href="tel:+2349020272115" data-track="phone_click">+234 902 027 2115</a>
+    <a href="tel:+2347037060269" data-track="phone_click">+234 703 706 0269</a>
+  </div>
+  <h2 class="section-title">Email</h2>
+  <div class="contact-line">
+    <a href="mailto:info@iamcorperate.com" data-track="email_click">info@iamcorperate.com</a>
+    <a href="mailto:Ibrahimkhalilmagashi@gmail.com" data-track="email_click">Ibrahimkhalilmagashi@gmail.com</a>
+  </div>
+  <p class="lead">General enquiries: info@iamcorperate.com. You may also write to the director email published for this company.</p>
+</div>
+<div>
+<h2 class="section-title">Message</h2>
+
+<form class="iam-form" data-enquiry="contact" data-required="contactPerson,phone,message">
+  <input type="hidden" name="intent" value="contact"/>
+  <div class="form-row">
+    <div><label>Company name *</label><input name="company" required/></div>
+    <div><label>Contact person *</label><input name="contactPerson" required/></div>
+  </div>
+  <div class="form-row">
+    <div><label>Phone / WhatsApp *</label><input name="phone" required/></div>
+    <div><label>Email</label><input type="email" name="email"/></div>
+  </div>
+  <div class="form-row">
+    <div><label>Country</label><input name="country" value="Nigeria"/></div>
+    <div><label>Product required</label><input name="product"/></div>
+  </div>
+  
+  <div class="form-row">
+    <div>
+      <label>Product category</label>
+      <select name="category">
+        <option value="">Select</option>
+        <option>Construction Materials</option>
+        <option>Hardware &amp; Tools</option>
+        <option>Steel Products</option>
+        <option>Machinery &amp; Equipment</option>
+        <option>Household &amp; Consumer Goods</option>
+        <option>PPE &amp; Safety</option>
+        <option>Electrical &amp; Industrial Supplies</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div>
+      <label>Preferred source</label>
+      <select name="source">
+        <option>Either</option>
+        <option>China</option>
+        <option>Nigeria</option>
+      </select>
+    </div>
+  </div>
+  <div><label>Technical specification</label><textarea name="specification" rows="3"></textarea></div>
+  <div class="form-row">
+    <div><label>Quantity</label><input name="quantity"/></div>
+    <div><label>Unit</label><input name="unit" placeholder="MT, pcs, sets"/></div>
+  </div>
+  <div class="form-row">
+    <div><label>Delivery location</label><input name="deliveryLocation"/></div>
+    <div><label>Required delivery date</label><input type="date" name="deliveryDate"/></div>
+  </div>
+  <div><label>Budget (optional)</label><input name="budget"/></div>
+  <div><label>Upload BOQ / material list / specification (optional, max 6 MB)</label><input type="file" name="file" accept=".pdf,.xls,.xlsx,.doc,.docx,.csv,.jpg,.jpeg,.png"/></div>
+  <div><label>Additional requirements</label><textarea name="message" rows="4"></textarea></div>
+  <button class="btn btn-gold" type="submit">Send message</button>
+  <p class="form-msg" role="status"></p>
+  <p class="note">Enquiries are handled privately. Customs, inspection and shipping steps are coordinated through our supplier and licensed partner network where required.</p>
+</form>
+
+</div></div></section></main>
+<footer id="iam-footer"></footer>
+<script src="./js/site.js"></script>
+<script src="./js/forms.js"></script>
+<script>IAM.init("contact"); if (window.IAMForms) IAMForms.bind();</script>
+</body>
+</html>

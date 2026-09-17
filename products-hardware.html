@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <script>
+    (function () {
+      var path = location.pathname.replace(/\/index\.html$/i, "/");
+      path = path.replace(/\/[^/]+\.html$/i, "/");
+      if (!path.endsWith("/")) path += "/";
+      var base = document.createElement("base");
+      base.href = path || "/";
+      document.head.insertBefore(base, document.head.firstChild);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hardware &amp; Tools — IAM International Logistics</title>
+  <meta name="description" content="Hardware and tools procurement for Nigerian sites and workshops."/>
+  <link rel="canonical" href="https://iamcorperate.com/products-hardware.html"/>
+  <meta property="og:title" content="Hardware & Tools"/>
+  <meta property="og:description" content="Hardware and tools procurement for Nigerian sites and workshops."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://iamcorperate.com/products-hardware.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./css/site.css"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IAM International Logistics Co., Ltd.",
+    "url": "https://iamcorperate.com/",
+    "email": "info@iamcorperate.com",
+    "telephone": "+2348101771640",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gwale",
+      "addressRegion": "Kano State",
+      "addressCountry": "NG"
+    },
+    "description": "China–Nigeria procurement, trading, industrial supply and logistics."
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav id="iam-nav"></nav>
+<main id="main">
+<section class="page-hero"><div class="wrap">
+<p class="kicker">Products &amp; supply</p>
+<h1>Hardware &amp; Tools</h1><span class="zh">五金供应</span>
+<p>Fasteners and tools sourced to specification for site and workshop use.</p>
+<div class="cta-row"><a class="btn btn-gold" href="./quote.html?category=Hardware%20%26%20Tools">Request a quote</a></div>
+</div></section>
+<section class="section"><div class="wrap grid-2">
+<figure class="card"><img src="./images/whatwesupply2.png" alt="Hardware &amp; Tools"/><div class="card-body"><p>Category visual. Not a photograph of a named IAM project.</p></div></figure>
+<div>
+  <h2 class="section-title">Categories</h2>
+  <ul class="list-plain"><li>Bolts, nuts, washers, screws, nails, anchors</li><li>Hand tools</li><li>Power tools</li><li>Construction accessories</li></ul>
+  <p class="lead">We do not publish live stock counts. Availability is confirmed on enquiry.</p>
+  <p class="lead">Available for sourcing upon request. Contact us for current availability and pricing.</p>
+</div></div></section></main>
+<footer id="iam-footer"></footer>
+<script src="./js/site.js"></script>
+<script src="./js/forms.js"></script>
+<script>IAM.init("products"); if (window.IAMForms) IAMForms.bind();</script>
+</body>
+</html>

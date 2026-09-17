@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <script>
+    (function () {
+      var path = location.pathname.replace(/\/index\.html$/i, "/");
+      path = path.replace(/\/[^/]+\.html$/i, "/");
+      if (!path.endsWith("/")) path += "/";
+      var base = document.createElement("base");
+      base.href = path || "/";
+      document.head.insertBefore(base, document.head.firstChild);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Household &amp; Consumer Goods Sourcing — IAM</title>
+  <meta name="description" content="Household and commercial goods sourced upon request for Nigerian buyers."/>
+  <link rel="canonical" href="https://iamcorperate.com/products-household.html"/>
+  <meta property="og:title" content="Household & Consumer Goods Sourcing"/>
+  <meta property="og:description" content="Household and commercial goods sourced upon request for Nigerian buyers."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://iamcorperate.com/products-household.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./css/site.css"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IAM International Logistics Co., Ltd.",
+    "url": "https://iamcorperate.com/",
+    "email": "info@iamcorperate.com",
+    "telephone": "+2348101771640",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gwale",
+      "addressRegion": "Kano State",
+      "addressCountry": "NG"
+    },
+    "description": "China–Nigeria procurement, trading, industrial supply and logistics."
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav id="iam-nav"></nav>
+<main id="main">
+<section class="page-hero"><div class="wrap">
+<p class="kicker">Products &amp; supply</p>
+<h1>Household &amp; Consumer Goods</h1><span class="zh">生活用品供应</span>
+<p>Household, furniture, kitchen, hotel, school and commercial goods. Available for sourcing upon request — not presented as warehouse stock.</p>
+<div class="cta-row"><a class="btn btn-gold" href="./quote.html?category=Household%20%26%20Consumer%20Goods">Request a quote</a></div>
+</div></section>
+<section class="section"><div class="wrap grid-2">
+<figure class="card"><img src="./images/howweoperaate5.png" alt="Household &amp; Consumer Goods"/><div class="card-body"><p>Category visual. Not a photograph of a named IAM project.</p></div></figure>
+<div>
+  <h2 class="section-title">Categories</h2>
+  <ul class="list-plain"><li>Household products</li><li>Furniture</li><li>Kitchen equipment</li><li>Plastic and storage products</li><li>Cleaning equipment</li><li>Office furniture</li><li>Lighting</li><li>Hotel supplies</li><li>School supplies</li><li>Commercial goods</li></ul>
+  <p class="lead">Send a product list or photographs of the items you need.</p>
+  <p class="lead">Available for sourcing upon request. Contact us for current availability and pricing.</p>
+</div></div></section></main>
+<footer id="iam-footer"></footer>
+<script src="./js/site.js"></script>
+<script src="./js/forms.js"></script>
+<script>IAM.init("products"); if (window.IAMForms) IAMForms.bind();</script>
+</body>
+</html>
