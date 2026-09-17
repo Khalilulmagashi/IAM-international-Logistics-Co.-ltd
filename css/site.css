@@ -136,8 +136,99 @@ h1, h2, h3, h4, .display { font-family: var(--font-display); }
   background: linear-gradient(105deg, rgba(7,21,37,0.92) 0%, rgba(11,31,58,0.78) 55%, rgba(11,31,58,0.55) 100%);
 }
 .home-hero .content { position: relative; z-index: 2; padding: 7rem 1.25rem 4rem; max-width: 1200px; margin: 0 auto; width: 100%; }
-.home-hero h1 { font-size: clamp(2.2rem, 5vw, 3.9rem); line-height: 1.06; max-width: 16ch; margin: 0 0 1.1rem; }
+.home-hero h1 { font-size: clamp(2.2rem, 5vw, 3.9rem); line-height: 1.06; max-width: 18ch; margin: 0 0 1.1rem; }
+.home-hero .content > p { max-width: 42rem; color: rgba(255,255,255,0.82); font-size: 1.08rem; line-height: 1.65; margin: 0 0 1rem; }
+.hero-points {
+  display: flex; flex-wrap: wrap; gap: 0.55rem 1.15rem;
+  margin: 0.35rem 0 1.15rem; padding: 0; list-style: none; max-width: 46rem;
+}
+.hero-points li {
+  font-family: var(--font-display); letter-spacing: 0.12em; text-transform: uppercase;
+  font-size: 0.7rem; font-weight: 700; color: var(--gold-soft);
+  border-left: 2px solid var(--gold); padding-left: 0.6rem;
+}
 .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.intro-block .lead { max-width: 48rem; }
+.statement {
+  margin: 0; max-width: 48rem; padding: 0.9rem 0 0.9rem 1.15rem;
+  border-left: 3px solid var(--gold); color: var(--navy);
+  font-size: 1.05rem; line-height: 1.6;
+}
+.process-flow {
+  display: grid; gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.process-item {
+  display: grid; grid-template-columns: 2.6rem 1fr; gap: 0.75rem;
+  padding: 1.1rem 0.2rem 1.15rem; border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.process-item h3 {
+  margin: 0 0 0.3rem; font-size: 1rem; color: #fff; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.process-item p { margin: 0; color: rgba(255,255,255,0.68); font-size: 0.9rem; line-height: 1.5; }
+.band-navy .process-item .num { align-self: start; padding-top: 0.15rem; }
+@media (min-width: 700px) {
+  .process-flow { grid-template-columns: 1fr 1fr; }
+  .process-item { padding: 1.2rem 1.1rem 1.25rem; border-right: 1px solid rgba(255,255,255,0.12); }
+}
+@media (min-width: 1100px) {
+  .process-flow { grid-template-columns: repeat(4, 1fr); }
+}
+.handle-grid { display: grid; gap: 1.15rem; }
+.handle-block {
+  background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--gold);
+  padding: 1.2rem 1.15rem 1.25rem;
+}
+.handle-block h3 {
+  margin: 0 0 0.45rem; font-size: 1.02rem; color: var(--navy);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.handle-block p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.handle-block-navy {
+  background: var(--navy-mid); border-color: rgba(255,255,255,0.08); border-top-color: var(--gold);
+}
+.handle-block-navy h3 { color: #fff; }
+.handle-block-navy p { color: rgba(255,255,255,0.68); }
+@media (min-width: 700px) {
+  .handle-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 980px) {
+  .handle-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+#chinese-companies .handle-grid {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 700px) {
+  #chinese-companies .handle-grid { grid-template-columns: 1fr 1fr; }
+}
+.bulk-note {
+  font-family: var(--font-display); letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 0.78rem; font-weight: 800; color: var(--navy); margin: -0.6rem 0 1.5rem;
+}
+.band-navy .bulk-note { color: var(--gold-soft); }
+.cat-row { display: grid; gap: 0.75rem; }
+@media (min-width: 700px) {
+  .cat-row { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 980px) {
+  .cat-row { grid-template-columns: repeat(4, 1fr); }
+}
+.cat-tile {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  min-height: 4.4rem; padding: 0.9rem 0.75rem; background: var(--navy); color: #fff;
+  text-decoration: none; font-family: var(--font-display); font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.85rem;
+  border: 1px solid var(--navy);
+}
+.cat-tile:hover { background: var(--navy-mid); color: var(--gold-soft); }
+.trust-list {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none;
+}
+.trust-list li {
+  border: 1px solid var(--line); background: #fff; color: var(--navy);
+  font-family: var(--font-display); letter-spacing: 0.08em; text-transform: uppercase;
+  font-size: 0.72rem; font-weight: 700; padding: 0.55rem 0.75rem;
+}
 
 .section { padding: 4.2rem 0; }
 .section-title { font-size: clamp(1.7rem, 3vw, 2.5rem); margin: 0 0 0.6rem; font-weight: 800; color: var(--navy); }

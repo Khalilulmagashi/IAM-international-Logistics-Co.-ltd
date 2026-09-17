@@ -97,7 +97,7 @@
       '<a class="iam-brand" href="./index.html" style="margin-bottom:0.8rem">' +
       '<div class="iam-mark">IAM</div><div><strong>IAM INTERNATIONAL</strong><span>Logistics Co., Ltd.</span></div></a>' +
       '<p class="tagline">WE CONNECT. WE MOVE. WE DELIVER.</p>' +
-      "<p>China–Nigeria procurement, trading, industrial supply and logistics coordination for Nigerian businesses and projects.</p>" +
+      "<p>China–Nigeria procurement, import, industrial supply and logistics partner for companies moving goods into Nigeria.</p>" +
       '<p><a href="' + PDF + '" download>Download company profile (PDF)</a></p></div>' +
       "<div><h4>Company</h4><ul>" +
       '<li><a href="./about.html">About IAM</a></li>' +
