@@ -21,8 +21,9 @@
       '<li class="iam-drop"><button type="button" aria-expanded="false">Services</button>' +
       '<div class="iam-drop-panel">' +
       '<a href="./services.html">All services</a>' +
+      '<a href="./import-logistics.html"' + cur("import") + '>Import &amp; Customs Clearance</a>' +
       '<a href="./services.html#procurement">Procurement &amp; Sourcing</a>' +
-      '<a href="./services.html#import">Import &amp; Export</a>' +
+      '<a href="./services.html#import">Import &amp; Export overview</a>' +
       '<a href="./services.html#logistics">Logistics</a>' +
       '<a href="./services.html#industrial">Industrial Supply</a>' +
       '<a href="./services.html#project">Project Supply</a>' +
@@ -61,8 +62,9 @@
       '<a href="./about.html">About IAM</a>' +
       "<details><summary>Services</summary>" +
       '<a href="./services.html">All services</a>' +
+      '<a href="./import-logistics.html">Import &amp; Customs Clearance</a>' +
       '<a href="./services.html#procurement">Procurement &amp; Sourcing</a>' +
-      '<a href="./services.html#import">Import &amp; Export</a>' +
+      '<a href="./services.html#import">Import &amp; Export overview</a>' +
       '<a href="./services.html#logistics">Logistics</a>' +
       '<a href="./services.html#industrial">Industrial Supply</a>' +
       '<a href="./services.html#project">Project Supply</a>' +
@@ -109,6 +111,7 @@
       "</ul></div>" +
       "<div><h4>Services &amp; products</h4><ul>" +
       '<li><a href="./services.html">Services</a></li>' +
+      '<li><a href="./import-logistics.html">Import &amp; customs clearance</a></li>' +
       '<li><a href="./china-sourcing.html">China sourcing</a></li>' +
       '<li><a href="./project-bulk.html">Project &amp; bulk supply</a></li>' +
       '<li><a href="./products-steel.html">Steel products</a></li>' +

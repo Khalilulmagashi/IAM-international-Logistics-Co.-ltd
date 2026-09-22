@@ -119,9 +119,38 @@ h1, h2, h3, h4, .display { font-family: var(--font-display); }
 }
 .page-hero h1 {
   margin: 0 0 1rem; font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1.08; font-weight: 800; letter-spacing: -0.02em;
-  max-width: 18ch;
+  max-width: 22ch;
 }
 .page-hero p { max-width: 42rem; color: rgba(255,255,255,0.72); font-size: 1.05rem; line-height: 1.65; margin: 0 0 1.5rem; }
+.page-hero .subhead {
+  font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
+  letter-spacing: 0.03em; color: var(--gold-soft); margin: 0 0 1rem; max-width: 36rem;
+}
+.page-hero .cta-row { margin-top: 0.25rem; }
+
+.delivery-chain {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; align-items: stretch; gap: 0; max-width: 36rem;
+}
+@media (min-width: 800px) {
+  .delivery-chain {
+    flex-direction: row; flex-wrap: wrap; align-items: center; max-width: none; gap: 0.45rem;
+  }
+  .delivery-chain .delivery-arrow { transform: rotate(-90deg); padding: 0 0.15rem; }
+}
+.delivery-node {
+  background: var(--navy-mid); color: #fff; border: 1px solid rgba(196,163,90,0.35);
+  font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; text-align: center; padding: 0.95rem 1rem; flex: 1; min-width: 8.5rem;
+}
+.band-navy .delivery-node { background: var(--navy-deep); }
+.delivery-arrow {
+  color: var(--gold); text-align: center; font-size: 1.15rem; font-weight: 700; padding: 0.2rem 0;
+  list-style: none;
+}
+.trust-list-navy li {
+  background: var(--navy-mid); border-color: rgba(255,255,255,0.12); color: #fff;
+}
 .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 0.04em; display: block; margin-top: 0.2rem; font-weight: 600; }
 
 .home-hero {

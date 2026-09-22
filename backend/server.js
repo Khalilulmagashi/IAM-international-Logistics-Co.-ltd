@@ -141,6 +141,11 @@ app.post('/api/enquiry', async (req, res) => {
     'deliveryLocation',
     'deliveryDate',
     'source',
+    'origin',
+    'containers',
+    'portOfDischarge',
+    'shippingTerms',
+    'timeline',
     'budget',
     'message',
     'projectName',
@@ -170,6 +175,7 @@ app.post('/api/enquiry', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`IAM International Logistics server running at http://localhost:${PORT}`);
+  console.log(`On the same Wi-Fi, open http://<this-computer-ip>:${PORT} from a phone`);
 });

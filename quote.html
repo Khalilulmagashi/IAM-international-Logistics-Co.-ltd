@@ -101,6 +101,18 @@
     <div><label>Delivery location</label><input name="deliveryLocation"/></div>
     <div><label>Required delivery date</label><input type="date" name="deliveryDate"/></div>
   </div>
+  <fieldset style="border:1px solid var(--line);padding:0.85rem">
+    <legend class="kicker" style="padding:0 0.4rem">Import / shipping details (optional)</legend>
+    <div class="form-row">
+      <div><label>Origin</label><input name="origin" placeholder="City / country of origin"/></div>
+      <div><label>Number of containers</label><input name="containers" placeholder="If known"/></div>
+    </div>
+    <div class="form-row">
+      <div><label>Port of discharge</label><input name="portOfDischarge" placeholder="If known"/></div>
+      <div><label>Shipping terms</label><input name="shippingTerms" placeholder="FOB, CIF, EXW, etc. if known"/></div>
+    </div>
+    <div><label>Expected timeline</label><input name="timeline" placeholder="Required window or target month"/></div>
+  </fieldset>
   <div><label>Budget (optional)</label><input name="budget"/></div>
   <fieldset style="border:1px solid var(--line);padding:0.85rem">
     <legend class="kicker" style="padding:0 0.4rem">Machinery details (if applicable)</legend>
