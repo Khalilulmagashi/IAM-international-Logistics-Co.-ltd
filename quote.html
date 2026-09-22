@@ -14,10 +14,10 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Request a Quote — IAM International Logistics</title>
-  <meta name="description" content="Request a China–Nigeria procurement or supply quotation. Attach a BOQ if available."/>
+  <meta name="description" content="Request a supply quote for goods IAM can source, purchase, import and supply. Attach a BOQ if available."/>
   <link rel="canonical" href="https://iamcorperate.com/quote.html"/>
   <meta property="og:title" content="Request a Quote"/>
-  <meta property="og:description" content="Request a China–Nigeria procurement or supply quotation. Attach a BOQ if available."/>
+  <meta property="og:description" content="Request a supply quote for goods IAM can source, purchase, import and supply. Attach a BOQ if available."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://iamcorperate.com/quote.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -48,8 +48,8 @@
 <main id="main">
 <section class="page-hero"><div class="wrap">
 <p class="kicker">Request a quote</p>
-<h1>Send a specification we can source against</h1>
-<p>Required fields marked. Attach a BOQ, material list or datasheet if you have one.</p>
+<h1>Request a Supply Quote</h1>
+<p>Send the product, specification and quantity. IAM will review it as a supply enquiry. Required fields are marked. Attach a BOQ, material list or datasheet if you have one.</p>
 <div class="cta-row"></div>
 </div></section>
 <section class="section"><div class="wrap" style="max-width:800px">
@@ -94,6 +94,10 @@
   </div>
   <div><label>Technical specification</label><textarea name="specification" rows="3"></textarea></div>
   <div class="form-row">
+    <div><label>Brand / manufacturer (if required)</label><input name="brand"/></div>
+    <div><label>Packaging</label><input name="packaging" placeholder="Bundles, cartons, loose, etc."/></div>
+  </div>
+  <div class="form-row">
     <div><label>Quantity</label><input name="quantity"/></div>
     <div><label>Unit</label><input name="unit" placeholder="MT, pcs, sets"/></div>
   </div>
@@ -118,7 +122,7 @@
     <legend class="kicker" style="padding:0 0.4rem">Machinery details (if applicable)</legend>
     <div class="form-row">
       <div><label>Machine type</label><input name="machineType"/></div>
-      <div><label>Brand preference</label><input name="brand"/></div>
+      <div><label>Brand preference</label><input name="machineBrand"/></div>
     </div>
     <div class="form-row">
       <div><label>Model</label><input name="model"/></div>
@@ -134,7 +138,7 @@
   </fieldset>
   <div><label>Upload BOQ / material list / specification (optional, max 6 MB)</label><input type="file" name="file" accept=".pdf,.xls,.xlsx,.doc,.docx,.csv,.jpg,.jpeg,.png"/></div>
   <div><label>Additional requirements</label><textarea name="message" rows="4"></textarea></div>
-  <button class="btn btn-gold" type="submit">Request a quote</button>
+  <button class="btn btn-gold" type="submit">Request a Supply Quote</button>
   <p class="form-msg" role="status"></p>
   <p class="note">Enquiries are handled privately. Customs, inspection and shipping steps are coordinated through our supplier and licensed partner network where required.</p>
 </form>

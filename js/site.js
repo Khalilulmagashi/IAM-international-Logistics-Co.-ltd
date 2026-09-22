@@ -99,7 +99,7 @@
       '<a class="iam-brand" href="./index.html" style="margin-bottom:0.8rem">' +
       '<div class="iam-mark">IAM</div><div><strong>IAM INTERNATIONAL</strong><span>Logistics Co., Ltd.</span></div></a>' +
       '<p class="tagline">WE CONNECT. WE MOVE. WE DELIVER.</p>' +
-      "<p>China–Nigeria procurement, import, industrial supply and logistics partner for companies moving goods into Nigeria.</p>" +
+      "<p>China–Nigeria trading, import, industrial supply and logistics. We source, purchase, import and supply goods for businesses and projects in Nigeria.</p>" +
       '<p><a href="' + PDF + '" download>Download company profile (PDF)</a></p></div>' +
       "<div><h4>Company</h4><ul>" +
       '<li><a href="./about.html">About IAM</a></li>' +
@@ -120,7 +120,7 @@
       "</ul></div>" +
       "<div><h4>Contact</h4><ul>" +
       '<li><a href="./contact.html">Contact</a></li>' +
-      '<li><a href="./quote.html">Request a quote</a></li>' +
+      '<li><a href="./quote.html">Request a supply quote</a></li>' +
       '<li><a href="mailto:info@iamcorperate.com" data-track="email_click">info@iamcorperate.com</a></li>' +
       '<li><a href="mailto:Ibrahimkhalilmagashi@gmail.com" data-track="email_click">Ibrahimkhalilmagashi@gmail.com</a></li>' +
       '<li><a href="tel:+2348101771640" data-track="phone_click">+234 810 177 1640</a></li>' +
