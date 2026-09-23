@@ -136,6 +136,8 @@ app.post('/api/enquiry', async (req, res) => {
     'product',
     'category',
     'specification',
+    'grade',
+    'dimensions',
     'quantity',
     'unit',
     'packaging',
