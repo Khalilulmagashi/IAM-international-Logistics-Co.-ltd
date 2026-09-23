@@ -56,22 +56,21 @@
 <form class="iam-form" data-enquiry="quote" data-required="company,contactPerson,phone,product">
   <input type="hidden" name="intent" value="quote"/>
   <div class="form-row">
-    <div><label>Company name *</label><input name="company" required/></div>
-    <div><label>Contact person *</label><input name="contactPerson" required/></div>
+    <div><label>Company name *<input name="company" required/></label></div>
+    <div><label>Contact person *<input name="contactPerson" required/></label></div>
   </div>
   <div class="form-row">
-    <div><label>Phone / WhatsApp *</label><input name="phone" required/></div>
-    <div><label>Email</label><input type="email" name="email"/></div>
+    <div><label>Phone / WhatsApp *<input name="phone" required/></label></div>
+    <div><label>Email<input type="email" name="email"/></label></div>
   </div>
   <div class="form-row">
-    <div><label>Country</label><input name="country" value="Nigeria"/></div>
-    <div><label>Product required</label><input name="product"/></div>
+    <div><label>Country<input name="country" value="Nigeria"/></label></div>
+    <div><label>Product required<input name="product"/></label></div>
   </div>
   
   <div class="form-row">
     <div>
-      <label>Product category</label>
-      <select name="category">
+      <label>Product category<select name="category">
         <option value="">Select</option>
         <option>Construction Materials</option>
         <option>Hardware &amp; Tools</option>
@@ -81,70 +80,68 @@
         <option>PPE &amp; Safety</option>
         <option>Electrical &amp; Industrial Supplies</option>
         <option>Other</option>
-      </select>
+      </select></label>
     </div>
     <div>
-      <label>Preferred source</label>
-      <select name="source">
+      <label>Preferred source<select name="source">
         <option>Either</option>
         <option>China</option>
         <option>Nigeria</option>
-      </select>
+      </select></label>
     </div>
   </div>
-  <div><label>Technical specification</label><textarea name="specification" rows="3"></textarea></div>
+  <div><label>Technical specification<textarea name="specification" rows="3"></textarea></label></div>
   <div class="form-row" data-for-category="Steel Products">
-    <div><label>Grade / standard</label><input name="grade" placeholder="If known"/></div>
-    <div><label>Diameter / dimensions</label><input name="dimensions" placeholder="Diameter, thickness, length or section size"/></div>
+    <div><label>Grade / standard<input name="grade" placeholder="If known"/></label></div>
+    <div><label>Diameter / dimensions<input name="dimensions" placeholder="Diameter, thickness, length or section size"/></label></div>
   </div>
   <div class="form-row">
-    <div><label>Brand / manufacturer (if required)</label><input name="brand"/></div>
-    <div><label>Packaging</label><input name="packaging" placeholder="Bundles, cartons, loose, etc."/></div>
+    <div><label>Brand / manufacturer (if required)<input name="brand"/></label></div>
+    <div><label>Packaging<input name="packaging" placeholder="Bundles, cartons, loose, etc."/></label></div>
   </div>
   <div class="form-row">
-    <div><label>Quantity</label><input name="quantity"/></div>
-    <div><label>Unit</label><input name="unit" placeholder="MT, tonnes, pcs, bundles, sets"/></div>
+    <div><label>Quantity<input name="quantity"/></label></div>
+    <div><label>Unit<input name="unit" placeholder="MT, tonnes, pcs, bundles, sets"/></label></div>
   </div>
   <div class="form-row">
-    <div><label>Delivery location</label><input name="deliveryLocation"/></div>
-    <div><label>Required delivery date</label><input type="date" name="deliveryDate"/></div>
+    <div><label>Delivery location<input name="deliveryLocation"/></label></div>
+    <div><label>Required delivery date<input type="date" name="deliveryDate"/></label></div>
   </div>
   <fieldset style="border:1px solid var(--line);padding:0.85rem">
     <legend class="kicker" style="padding:0 0.4rem">Import / shipping details (optional)</legend>
     <div class="form-row">
-      <div><label>Origin</label><input name="origin" placeholder="City / country of origin"/></div>
-      <div><label>Number of containers</label><input name="containers" placeholder="If known"/></div>
+      <div><label>Origin<input name="origin" placeholder="City / country of origin"/></label></div>
+      <div><label>Number of containers<input name="containers" placeholder="If known"/></label></div>
     </div>
     <div class="form-row">
-      <div><label>Port of discharge</label><input name="portOfDischarge" placeholder="If known"/></div>
-      <div><label>Shipping terms</label><input name="shippingTerms" placeholder="FOB, CIF, EXW, etc. if known"/></div>
+      <div><label>Port of discharge<input name="portOfDischarge" placeholder="If known"/></label></div>
+      <div><label>Shipping terms<input name="shippingTerms" placeholder="FOB, CIF, EXW, etc. if known"/></label></div>
     </div>
-    <div><label>Expected timeline</label><input name="timeline" placeholder="Required window or target month"/></div>
+    <div><label>Expected timeline<input name="timeline" placeholder="Required window or target month"/></label></div>
   </fieldset>
-  <div><label>Budget (optional)</label><input name="budget"/></div>
+  <div><label>Budget (optional)<input name="budget"/></label></div>
   <fieldset data-for-category="Machinery &amp; Equipment" style="border:1px solid var(--line);padding:0.85rem">
     <legend class="kicker" style="padding:0 0.4rem">Machinery details (optional)</legend>
     <div class="form-row">
-      <div><label>Machine type</label><input name="machineType"/></div>
-      <div><label>Brand preference</label><input name="machineBrand"/></div>
+      <div><label>Machine type<input name="machineType"/></label></div>
+      <div><label>Brand preference<input name="machineBrand"/></label></div>
     </div>
     <div class="form-row">
-      <div><label>Model</label><input name="model"/></div>
-      <div><label>New / used</label>
-        <select name="condition"><option value="">Select</option><option>New</option><option>Used</option></select>
+      <div><label>Model<input name="model"/></label></div>
+      <div><label>New / used<select name="condition"><option value="">Select</option><option>New</option><option>Used</option></select></label>
       </div>
     </div>
     <div class="form-row">
-      <div><label>Year</label><input name="year"/></div>
-      <div><label>Capacity / engine / power</label><input name="capacity"/></div>
+      <div><label>Year<input name="year"/></label></div>
+      <div><label>Capacity / engine / power<input name="capacity"/></label></div>
     </div>
-    <div><label>Intended use</label><input name="intendedUse"/></div>
+    <div><label>Intended use<input name="intendedUse"/></label></div>
   </fieldset>
-  <div><label>Upload BOQ / material list / specification (optional, max 6 MB)</label><input type="file" name="file" accept=".pdf,.xls,.xlsx,.doc,.docx,.csv,.jpg,.jpeg,.png"/></div>
-  <div><label>Additional requirements</label><textarea name="message" rows="4"></textarea></div>
+  <div><label>Upload BOQ / material list / specification (optional, max 6 MB)<input type="file" name="file" accept=".pdf,.xls,.xlsx,.doc,.docx,.csv,.jpg,.jpeg,.png"/></label></div>
+  <div><label>Additional requirements<textarea name="message" rows="4"></textarea></label></div>
   <button class="btn btn-gold" type="submit">Request a Supply Quote</button>
   <p class="form-msg" role="status"></p>
-  <p class="note">Enquiries are handled privately. Customs, inspection and shipping steps are coordinated through our supplier and licensed partner network where required.</p>
+  <p class="note">Enquiries are handled privately. Customs, inspection and shipping steps are coordinated through licensed service providers where required.</p>
 </form>
 </div></section></main>
 <footer id="iam-footer"></footer>

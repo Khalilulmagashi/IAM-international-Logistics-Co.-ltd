@@ -27,6 +27,9 @@ h1, h2, h3, h4, .display { font-family: var(--font-display); }
 .skip-link {
   position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);
 }
+a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--gold); outline-offset: 3px;
+}
 .skip-link:focus {
   position: fixed; z-index: 200; top: 12px; left: 12px; width: auto; height: auto;
   clip: auto; padding: 0.5rem 1rem; background: #fff; color: var(--navy);
@@ -259,6 +262,12 @@ h1, h2, h3, h4, .display { font-family: var(--font-display); }
 }
 .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .intro-block .lead { max-width: 48rem; }
+.profile-note {
+  margin: 1.25rem 0 0; padding: 0.15rem 0 0.15rem 1.15rem;
+  border-left: 3px solid var(--gold);
+}
+.profile-note p { margin: 0 0 0.85rem; color: var(--navy); line-height: 1.6; max-width: 42rem; }
+.profile-note p:last-child { margin-bottom: 0; }
 .statement {
   margin: 0; max-width: 48rem; padding: 0.9rem 0 0.9rem 1.15rem;
   border-left: 3px solid var(--gold); color: var(--navy);
@@ -393,7 +402,10 @@ h1, h2, h3, h4, .display { font-family: var(--font-display); }
 .band-navy .card-body .link { color: var(--gold-soft); }
 
 form.iam-form { display: grid; gap: 0.85rem; }
-.iam-form label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--navy); }
+.iam-form label { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--navy); }
+.iam-form label input, .iam-form label select, .iam-form label textarea {
+  text-transform: none; letter-spacing: normal; font-weight: 500; font-size: 0.95rem;
+}
 .iam-form input, .iam-form select, .iam-form textarea {
   width: 100%; padding: 0.75rem 0.85rem; border: 1px solid var(--line); background: #fff;
   font: 400 0.95rem var(--font-body); color: var(--ink);
