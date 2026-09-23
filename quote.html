@@ -93,7 +93,7 @@
     </div>
   </div>
   <div><label>Technical specification</label><textarea name="specification" rows="3"></textarea></div>
-  <div class="form-row">
+  <div class="form-row" data-for-category="Steel Products">
     <div><label>Grade / standard</label><input name="grade" placeholder="If known"/></div>
     <div><label>Diameter / dimensions</label><input name="dimensions" placeholder="Diameter, thickness, length or section size"/></div>
   </div>
@@ -122,8 +122,8 @@
     <div><label>Expected timeline</label><input name="timeline" placeholder="Required window or target month"/></div>
   </fieldset>
   <div><label>Budget (optional)</label><input name="budget"/></div>
-  <fieldset style="border:1px solid var(--line);padding:0.85rem">
-    <legend class="kicker" style="padding:0 0.4rem">Machinery details (if applicable)</legend>
+  <fieldset data-for-category="Machinery &amp; Equipment" style="border:1px solid var(--line);padding:0.85rem">
+    <legend class="kicker" style="padding:0 0.4rem">Machinery details (optional)</legend>
     <div class="form-row">
       <div><label>Machine type</label><input name="machineType"/></div>
       <div><label>Brand preference</label><input name="machineBrand"/></div>

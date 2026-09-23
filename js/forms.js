@@ -106,12 +106,34 @@
           submitEnquiry(form, type, required);
         });
       });
+      function applyCategory(form) {
+        var sel = form.querySelector('[name="category"]');
+        var value = sel ? sel.value : "";
+        form.querySelectorAll("[data-for-category]").forEach(function (block) {
+          var allowed = block.getAttribute("data-for-category").split("|");
+          var show = allowed.indexOf(value) !== -1;
+          block.hidden = !show;
+          block.querySelectorAll("input, select, textarea").forEach(function (input) {
+            input.disabled = !show;
+          });
+        });
+      }
+      document.querySelectorAll("form[data-enquiry]").forEach(function (form) {
+        var sel = form.querySelector('[name="category"]');
+        if (!sel) return;
+        sel.addEventListener("change", function () { applyCategory(form); });
+        applyCategory(form);
+      });
       var params = new URLSearchParams(location.search);
       var cat = params.get("category");
       var product = params.get("product");
       if (cat) {
         var sel = document.querySelector('[name="category"]');
-        if (sel) sel.value = cat;
+        if (sel) {
+          sel.value = cat;
+          var form = sel.closest("form");
+          if (form) applyCategory(form);
+        }
       }
       if (product) {
         var pr = document.querySelector('[name="product"]');
