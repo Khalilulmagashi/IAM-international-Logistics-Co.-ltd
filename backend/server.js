@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
+const whatsapp = require('./services/whatsapp');
 
 dotenv.config();
 
@@ -40,6 +41,50 @@ function smtpReady() {
       !isPlaceholder(process.env.SMTP_PASS) &&
       !isPlaceholder(to)
   );
+}
+
+const recentHits = new Map();
+
+function clientIp(req) {
+  const forwarded = req.headers['x-forwarded-for'];
+  if (typeof forwarded === 'string' && forwarded) return forwarded.split(',')[0].trim();
+  return req.socket.remoteAddress || 'unknown';
+}
+
+function rateLimited(req) {
+  const ip = clientIp(req);
+  const now = Date.now();
+  const windowMs = 10 * 60 * 1000;
+  const list = (recentHits.get(ip) || []).filter(function (time) { return now - time < windowMs; });
+  if (list.length >= 12) {
+    recentHits.set(ip, list);
+    return true;
+  }
+  list.push(now);
+  recentHits.set(ip, list);
+  return false;
+}
+
+function submissionId() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+}
+
+function safeAttachment(attachment) {
+  if (!attachment || typeof attachment !== 'object') return null;
+  const name = String(attachment.name || '').replace(/[^\w.\- ()]/g, '_').slice(0, 120);
+  const data = typeof attachment.data === 'string' ? attachment.data.replace(/\s/g, '') : '';
+  if (!name) return null;
+  if (data && data.length > 8 * 1024 * 1024) {
+    const error = new Error('Attachment is too large.');
+    error.statusCode = 400;
+    throw error;
+  }
+  if (data && !/^[A-Za-z0-9+/=]+$/.test(data)) {
+    const error = new Error('Attachment could not be read.');
+    error.statusCode = 400;
+    throw error;
+  }
+  return { name: name, type: String(attachment.type || '').slice(0, 80), data: data };
 }
 
 function pick(body, keys) {
@@ -87,40 +132,57 @@ async function sendEnquiry(subject, fields, attachment) {
   return { simulated: false };
 }
 
+const CUSTOMER_MESSAGE = 'Thank you. Your request has been received by IAM International Logistics. Our team will review the details and contact you shortly.';
+
+async function notify(type, fields, attachment, intent) {
+  const id = submissionId();
+  await whatsapp.sendWhatsAppNotification({
+    type: type,
+    intent: intent,
+    data: fields,
+    submissionId: id,
+    attachmentName: attachment ? attachment.name : '',
+  });
+  return id;
+}
+
 app.post('/api/contact', async (req, res) => {
+  if (rateLimited(req)) {
+    return res.status(429).json({ ok: false, error: 'Please wait a few minutes before sending another request.' });
+  }
   const { name, phone, email, message } = req.body || {};
   if (!name || !phone || !message) {
     return res.status(400).json({ ok: false, error: 'Missing required fields.' });
   }
   try {
-    const result = await sendEnquiry(`Website contact from ${name}`, {
-      name,
-      phone,
-      email: email || 'N/A',
-      message,
-    });
-    res.json({
-      ok: true,
-      simulated: result.simulated,
-      message: result.simulated
-        ? 'Message received (email sending not configured on server).'
-        : 'Message sent successfully.',
-    });
+    const fields = pick({ name, phone, email, message }, ['name', 'phone', 'email', 'message']);
+    const result = await sendEnquiry(`Website contact from ${name}`, fields);
+    await notify('contact', fields);
+    res.json({ ok: true, simulated: result.simulated, message: CUSTOMER_MESSAGE });
   } catch (err) {
-    console.error(err);
+    console.error(err && err.message ? err.message : 'contact failed');
     res.status(500).json({ ok: false, error: 'Failed to send message.' });
   }
 });
 
 app.post('/api/enquiry', async (req, res) => {
+  if (rateLimited(req)) {
+    return res.status(429).json({ ok: false, error: 'Please wait a few minutes before sending another request.' });
+  }
   const body = req.body || {};
-  const type = String(body.type || body.intent || 'quote');
+  const type = whatsapp.normalizeType(body.type || body.intent || 'quote', body.intent);
+  if (!type) {
+    return res.status(400).json({ ok: false, error: 'This request could not be accepted.' });
+  }
   const phone = body.phone;
   const contactPerson = body.contactPerson || body.name;
   if (!phone || !contactPerson) {
     return res.status(400).json({ ok: false, error: 'Contact person and phone are required.' });
   }
-  if ((type === 'quote' || type === 'project') && !body.product && !body.company) {
+  if (type === 'general_enquiry' && !body.message) {
+    return res.status(400).json({ ok: false, error: 'A message is required.' });
+  }
+  if (type !== 'general_enquiry' && !body.product && !body.company) {
     return res.status(400).json({ ok: false, error: 'Company or product required.' });
   }
 
@@ -164,18 +226,19 @@ app.post('/api/enquiry', async (req, res) => {
     'intendedUse',
   ]);
 
+  let attachment = null;
   try {
-    const result = await sendEnquiry(`IAM website ${type} — ${contactPerson}`, fields, body.attachment);
-    res.json({
-      ok: true,
-      simulated: result.simulated,
-      message: result.simulated
-        ? 'Enquiry received (email sending not configured on server).'
-        : 'Enquiry sent successfully.',
-    });
+    attachment = safeAttachment(body.attachment);
+    const result = await sendEnquiry(`IAM website ${type} — ${contactPerson}`, fields, attachment);
+    await notify(type, fields, attachment, body.intent);
+    res.json({ ok: true, simulated: result.simulated, message: CUSTOMER_MESSAGE });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ ok: false, error: 'Failed to send enquiry.' });
+    const status = err && err.statusCode ? err.statusCode : 500;
+    console.error(err && err.message ? err.message : 'enquiry failed');
+    res.status(status).json({
+      ok: false,
+      error: status === 400 ? err.message : 'Failed to send enquiry.',
+    });
   }
 });
 

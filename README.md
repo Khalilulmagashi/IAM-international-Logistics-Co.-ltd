@@ -20,4 +20,6 @@ Open http://localhost:3000
 
 Copy `backend/.env.example` to `backend/.env` and set SMTP to receive enquiries by email. Without SMTP, submissions are logged on the server.
 
+WhatsApp staff notifications use the same enquiry endpoint. Set `WHATSAPP_ENABLED=false` until Meta phone registration and a server-side access token are in place. The token stays in `backend/.env` and is never sent to the browser. Email delivery stays in place alongside WhatsApp.
+
 Domain spelling used throughout: **iamcorperate.com**

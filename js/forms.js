@@ -75,9 +75,8 @@
       if (window.IAM) IAM.track(type + "_submit", { category: data.category || "" });
       setMsg(
         msg,
-        body.simulated
-          ? "Received. Email delivery is not configured on the server yet; the enquiry was logged."
-          : "Thank you. We have received your enquiry and will respond.",
+        body.message ||
+          "Thank you. Your request has been received by IAM International Logistics. Our team will review the details and contact you shortly.",
         true
       );
       form.reset();
@@ -102,6 +101,8 @@
         form.addEventListener("submit", function (e) {
           e.preventDefault();
           var type = form.getAttribute("data-enquiry") || "quote";
+          var intentInput = form.querySelector('[name="intent"]');
+          if (type === "quote" && intentInput && intentInput.value === "import") type = "import_logistics";
           var required = (form.getAttribute("data-required") || "").split(",").filter(Boolean);
           submitEnquiry(form, type, required);
         });
@@ -125,6 +126,12 @@
         applyCategory(form);
       });
       var params = new URLSearchParams(location.search);
+      if (params.get("intent") === "import") {
+        document.querySelectorAll('form[data-enquiry="quote"]').forEach(function (form) {
+          var intent = form.querySelector('[name="intent"]');
+          if (intent) intent.value = "import";
+        });
+      }
       var cat = params.get("category");
       var product = params.get("product");
       if (cat) {
