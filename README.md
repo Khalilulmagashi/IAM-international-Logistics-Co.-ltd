@@ -14,7 +14,6 @@ Open http://localhost:3000
 
 - `index.html` and inner pages (`about.html`, `services.html`, `products-*.html`, `china-sourcing.html`, `quote.html`, …)
 - `css/site.css`, `js/site.js`, `js/forms.js`
-- `data/products.json` — category data for later CMS use
 - `backend/server.js` — `/api/health`, `/api/contact`, `/api/enquiry` (quote/project/contact + optional file as base64)
 - `robots.txt`, `sitemap.xml`
 
