@@ -1,15 +1,26 @@
 (function () {
-  function setMsg(el, text, ok) {
+  function tr(en) {
+    if (window.IAM_I18N && IAM_I18N.text) return IAM_I18N.text(en);
+    return en;
+  }
+
+  function setMsg(el, en, ok) {
     if (!el) return;
-    el.textContent = text;
+    el.textContent = tr(en);
+    if (el.firstChild) el.firstChild._iamEn = en;
     el.className = "form-msg " + (ok ? "ok" : "err");
+  }
+
+  function setButtonText(btn, en) {
+    btn.textContent = tr(en);
+    if (btn.firstChild) btn.firstChild._iamEn = en;
   }
 
   function readFileAsBase64(file) {
     return new Promise(function (resolve, reject) {
       if (!file) return resolve(null);
       if (file.size > 6 * 1024 * 1024) {
-        reject(new Error("Attachment must be under 6 MB."));
+        reject(new Error(tr("Attachment must be under 6 MB.")));
         return;
       }
       var reader = new FileReader();
@@ -19,7 +30,7 @@
         resolve({ name: file.name, type: file.type, data: parts[1] || "" });
       };
       reader.onerror = function () {
-        reject(new Error("Could not read the attachment."));
+        reject(new Error(tr("Could not read the attachment.")));
       };
       reader.readAsDataURL(file);
     });
@@ -50,8 +61,11 @@
     try {
       if (btn) {
         btn.disabled = true;
-        btn.dataset.label = btn.textContent;
-        btn.textContent = "Sending…";
+        var labelNode = btn.firstChild;
+        btn.dataset.label = labelNode && labelNode._iamEn
+          ? labelNode._iamEn.replace(/\s+/g, " ").trim()
+          : btn.textContent;
+        setButtonText(btn, "Sending…");
       }
       var attachment = await readFileAsBase64(file);
       var payload = Object.assign({ type: type }, data);
@@ -83,17 +97,26 @@
     } catch (err) {
       var text = err && err.message ? err.message : "Could not send.";
       if (text === "Failed to fetch" || text === "Load failed") {
-        text =
-          "Could not reach the server. Open this site via http://localhost:3000, or email info@iamcorperate.com / WhatsApp +234 810 177 1640.";
+        text = "Could not reach the server. Open this site via http://localhost:3000, or email info@iamcorperate.com / WhatsApp +234 810 177 1640.";
       }
       setMsg(msg, text, false);
     } finally {
       if (btn) {
         btn.disabled = false;
-        btn.textContent = btn.dataset.label || "Submit";
+        setButtonText(btn, btn.dataset.label || "Submit");
       }
     }
   }
+
+  document.addEventListener("invalid", function (e) {
+    var el = e.target;
+    if (!el || !el.form || !el.form.hasAttribute("data-enquiry")) return;
+    if (el.validity.valueMissing) el.setCustomValidity(tr("Please complete the required fields."));
+    else if (el.validity.typeMismatch) el.setCustomValidity(tr("Please enter a valid email address."));
+  }, true);
+  document.addEventListener("input", function (e) {
+    if (e.target && e.target.setCustomValidity) e.target.setCustomValidity("");
+  }, true);
 
   window.IAMForms = {
     bind: function () {

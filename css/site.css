@@ -103,6 +103,45 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
   .iam-cta-desktop { display: inline-flex !important; }
 }
 .iam-cta-desktop { display: none; }
+.lang-switch {
+  display: inline-flex; align-items: center; gap: 0.28rem; flex-shrink: 0;
+}
+.lang-switch button {
+  background: none; border: 0; color: rgba(255,255,255,0.72);
+  font: 600 0.82rem var(--font-body); cursor: pointer; padding: 0.35rem 0.15rem;
+}
+.lang-switch button[aria-pressed="true"] { color: var(--gold-soft); }
+.lang-switch span { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+.lang-modal {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(7, 21, 37, 0.72);
+  display: grid; place-items: center; padding: 1.25rem;
+}
+.lang-modal-card {
+  width: min(26rem, 100%); background: #fff; color: var(--navy);
+  border-top: 3px solid var(--gold); padding: 1.6rem 1.4rem 1.35rem;
+}
+.lang-modal h2 { margin: 0; font-size: 1.45rem; font-weight: 600; }
+.lang-en-label { margin: 0.15rem 0 1rem; color: var(--muted); }
+.lang-choices { display: grid; gap: 0.6rem; }
+.lang-choices button {
+  text-align: left; background: var(--paper); border: 1px solid var(--line);
+  padding: 0.85rem 1rem; cursor: pointer; color: var(--navy); font: 500 1rem var(--font-body);
+}
+.lang-choices button strong { display: block; font-size: 1.05rem; font-weight: 600; }
+.lang-choices button span { color: var(--muted); font-size: 0.9rem; }
+.lang-choices button:hover, .lang-choices button:focus-visible { border-color: var(--gold); }
+html[lang="zh-CN"] body,
+html[lang="zh-CN"] h1,
+html[lang="zh-CN"] h2,
+html[lang="zh-CN"] h3,
+html[lang="zh-CN"] h4 {
+  font-family: "Source Sans 3", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+html[lang="zh-CN"] body { line-height: 1.75; }
+html[lang="zh-CN"] h1,
+html[lang="zh-CN"] h2,
+html[lang="zh-CN"] h3 { line-height: 1.35; }
 
 #mobile-menu {
   display: none; background: var(--navy-mid); border-top: 1px solid rgba(255,255,255,0.08);
