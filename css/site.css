@@ -142,6 +142,17 @@ html[lang="zh-CN"] body { line-height: 1.75; }
 html[lang="zh-CN"] h1,
 html[lang="zh-CN"] h2,
 html[lang="zh-CN"] h3 { line-height: 1.35; }
+html[lang="zh-CN"] .kicker,
+html[lang="zh-CN"] .hero-points li,
+html[lang="zh-CN"] .model-index,
+html[lang="zh-CN"] .num,
+html[lang="zh-CN"] .zh,
+html[lang="zh-CN"] .iam-brand span {
+  letter-spacing: 0.02em;
+}
+html[lang="zh-CN"] .btn { line-height: 1.4; }
+html[lang="zh-CN"] .page-hero h1,
+html[lang="zh-CN"] .home-hero h1 { max-width: 14em; }
 
 #mobile-menu {
   display: none; background: var(--navy-mid); border-top: 1px solid rgba(255,255,255,0.08);
@@ -163,12 +174,12 @@ html[lang="zh-CN"] h3 { line-height: 1.35; }
 .page-hero .wrap, .wrap { max-width: 1200px; margin: 0 auto; padding-left: 1.25rem; padding-right: 1.25rem; }
 .page-hero .wrap { padding-left: 0; padding-right: 0; }
 .kicker {
-  font-family: var(--font-body); letter-spacing: 0.12em; text-transform: uppercase;
+  font-family: var(--font-body); letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--gold); font-size: 0.75rem; font-weight: 600; margin: 0 0 0.65rem;
 }
 .page-hero h1 {
-  margin: 0 0 0.85rem; font-size: clamp(1.85rem, 3vw, 2.6rem); line-height: 1.15; font-weight: 600;
-  max-width: 20ch;
+  margin: 0 0 0.85rem; font-size: clamp(1.85rem, 3vw, 2.6rem); line-height: 1.18; font-weight: 600;
+  max-width: 18em;
 }
 .page-hero p { max-width: 38rem; color: rgba(255,255,255,0.78); font-size: 1.05rem; line-height: 1.6; margin: 0 0 1rem; }
 .page-hero a { color: var(--gold-soft); }
@@ -191,8 +202,9 @@ html[lang="zh-CN"] h3 { line-height: 1.35; }
 }
 .delivery-node {
   background: var(--navy-mid); color: #fff; border: 1px solid rgba(196,163,90,0.35);
-  font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; text-align: center; padding: 0.95rem 1rem; flex: 1; min-width: 8.5rem;
+  font-family: var(--font-body); font-weight: 600; letter-spacing: 0;
+  text-transform: none; text-align: center; padding: 0.85rem 1rem; flex: 1; min-width: 8.5rem;
+  font-size: 0.95rem; line-height: 1.35;
 }
 .band-navy .delivery-node { background: var(--navy-deep); }
 .delivery-arrow {
@@ -217,7 +229,7 @@ html[lang="zh-CN"] .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 
   background: linear-gradient(105deg, rgba(7,21,37,0.92) 0%, rgba(11,31,58,0.78) 55%, rgba(11,31,58,0.55) 100%);
 }
 .home-hero .content { position: relative; z-index: 2; padding: 7rem 1.25rem 4rem; max-width: 1200px; margin: 0 auto; width: 100%; }
-.home-hero h1 { font-size: clamp(2rem, 3.6vw, 2.85rem); line-height: 1.15; font-weight: 600; max-width: 18ch; margin: 0 0 0.9rem; }
+.home-hero h1 { font-size: clamp(2rem, 3.4vw, 2.75rem); line-height: 1.18; font-weight: 600; max-width: 16em; margin: 0 0 0.9rem; }
 #how-we-trade .lead { max-width: 38rem; margin-bottom: 1.35rem; }
 .trade-models { display: grid; gap: 1rem; }
 @media (min-width: 860px) { .trade-models { grid-template-columns: 1fr 1fr; align-items: stretch; } }
@@ -233,9 +245,9 @@ html[lang="zh-CN"] .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 
   margin: 0 0 0.4rem;
   font-family: var(--font-display);
   color: var(--gold);
-  letter-spacing: 0.18em;
-  font-weight: 800;
-  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 0.78rem;
 }
 .model-card h3 {
   margin: 0 0 0.35rem;
@@ -252,14 +264,14 @@ html[lang="zh-CN"] .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 
   grid-template-columns: 1.5rem 1fr;
   gap: 0.4rem;
   align-items: baseline;
-  font-family: var(--font-display);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.74rem;
-  font-weight: 700;
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--muted);
 }
-.model-focus li span { color: var(--gold); font-size: 0.68rem; }
+.model-focus li span { color: var(--gold); font-size: 0.82rem; font-weight: 600; }
 .model-focus li.is-key { color: var(--navy); }
 .stage-line {
   display: flex;
@@ -284,6 +296,13 @@ html[lang="zh-CN"] .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 
 .stage-line .sep { color: var(--gold); letter-spacing: 0; font-weight: 600; margin-right: 0.28rem; }
 .stage-line .is-key { border-bottom: 2px solid var(--gold); padding-bottom: 0.02rem; }
 .stage-tail { display: contents; }
+@media (max-width: 859px) {
+  .stage-line > span { white-space: normal; }
+  .home-hero .content { padding: 5.5rem 1.25rem 3rem; }
+  .home-hero { min-height: 0; }
+  .page-hero { padding: 2.6rem 1.25rem 2.2rem; }
+  .section { padding: 2.6rem 0; }
+}
 @media (min-width: 860px) {
   .model-card .stage-line { gap: 0.18rem 0.22rem; }
   .model-card .stage-line > span { font-size: 0.8rem; letter-spacing: 0; }
@@ -304,8 +323,8 @@ html[lang="zh-CN"] .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 
   margin: 0.35rem 0 1.15rem; padding: 0; list-style: none; max-width: 46rem;
 }
 .hero-points li {
-  font-family: var(--font-display); letter-spacing: 0.12em; text-transform: uppercase;
-  font-size: 0.7rem; font-weight: 700; color: var(--gold-soft);
+  font-family: var(--font-body); letter-spacing: 0; text-transform: none;
+  font-size: 0.92rem; font-weight: 600; color: var(--gold-soft);
   border-left: 2px solid var(--gold); padding-left: 0.6rem;
 }
 .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
@@ -384,7 +403,7 @@ html[lang="zh-CN"] .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 
   display: flex; align-items: center; justify-content: center; text-align: center;
   min-height: 4.4rem; padding: 0.9rem 0.75rem; background: var(--navy); color: #fff;
   text-decoration: none; font-family: var(--font-display); font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.85rem;
+  letter-spacing: 0; text-transform: none; font-size: 0.95rem; line-height: 1.35;
   border: 1px solid var(--navy);
 }
 .cat-tile:hover { background: var(--navy-mid); color: var(--gold-soft); }
@@ -420,9 +439,9 @@ html[lang="zh-CN"] .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 
 .card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: var(--navy-mid); }
 .card-body { padding: 1.15rem 1.2rem 1.3rem; display: flex; flex-direction: column; flex: 1; }
 .card-body h3 { margin: 0 0 0.35rem; font-size: 1.15rem; color: var(--navy); }
-.num { font-family: var(--font-display); color: var(--gold); letter-spacing: 0.14em; font-size: 0.75rem; font-weight: 800; }
+.num { font-family: var(--font-display); color: var(--gold); letter-spacing: 0.06em; font-size: 0.78rem; font-weight: 600; }
 .card-body p { color: var(--muted); font-size: 0.92rem; line-height: 1.55; margin: 0 0 1rem; flex: 1; }
-.card-body .link { color: var(--navy); font-family: var(--font-display); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.72rem; font-weight: 700; text-decoration: none; }
+.card-body .link { color: var(--navy); font-family: var(--font-body); letter-spacing: 0; text-transform: none; font-size: 0.92rem; font-weight: 600; text-decoration: none; }
 .card-body .link:hover { color: #9a7b32; }
 
 .list-plain { margin: 0; padding: 0; list-style: none; }
@@ -450,7 +469,7 @@ html[lang="zh-CN"] .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 
 .band-navy .card-body .link { color: var(--gold-soft); }
 
 form.iam-form { display: grid; gap: 0.85rem; }
-.iam-form label { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 600; color: var(--navy); }
+.iam-form label { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.84rem; letter-spacing: 0; text-transform: none; font-weight: 600; color: var(--navy); }
 .iam-form label input, .iam-form label select, .iam-form label textarea {
   text-transform: none; letter-spacing: normal; font-weight: 500; font-size: 0.95rem;
 }
@@ -472,8 +491,8 @@ form.iam-form { display: grid; gap: 0.85rem; }
   display: grid; gap: 0.2rem; padding: 0.85rem 0; border-bottom: 1px solid var(--line);
 }
 .spec-list dt {
-  margin: 0; font-family: var(--font-display); letter-spacing: 0.08em; text-transform: uppercase;
-  font-size: 0.78rem; font-weight: 700; color: var(--navy);
+  margin: 0; font-family: var(--font-body); letter-spacing: 0; text-transform: none;
+  font-size: 0.92rem; font-weight: 600; color: var(--navy);
 }
 .spec-list dd { margin: 0; color: var(--muted); line-height: 1.5; }
 @media (min-width: 700px) {
@@ -482,8 +501,8 @@ form.iam-form { display: grid; gap: 0.85rem; }
 .handle-block .stage-line { margin-top: 0.85rem; }
 .handle-block .btn { margin-top: 0.85rem; }
 .handle-block > a:not(.btn) {
-  color: var(--navy); font-family: var(--font-display); letter-spacing: 0.08em;
-  text-transform: uppercase; font-size: 0.72rem; font-weight: 700; text-decoration: none;
+  color: var(--navy); font-family: var(--font-body); letter-spacing: 0;
+  text-transform: none; font-size: 0.92rem; font-weight: 600; text-decoration: none;
 }
 
 #iam-footer {
@@ -492,7 +511,7 @@ form.iam-form { display: grid; gap: 0.85rem; }
 }
 .ft-grid { display: grid; gap: 2rem; }
 @media (min-width: 800px) { .ft-grid { grid-template-columns: 1.3fr 1fr 1fr 1fr; } }
-#iam-footer h4 { color: #fff; margin: 0 0 0.7rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+#iam-footer h4 { color: #fff; margin: 0 0 0.7rem; font-size: 0.92rem; letter-spacing: 0; text-transform: none; font-weight: 600; }
 #iam-footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
 #iam-footer a:hover { color: var(--gold-soft); }
 #iam-footer ul { list-style: none; margin: 0; padding: 0; }
@@ -504,6 +523,9 @@ form.iam-form { display: grid; gap: 0.85rem; }
 .doc-frame img { width: 100%; height: auto; max-height: 28rem; object-fit: contain; background: #fff; }
 .contact-line { display: flex; flex-direction: column; gap: 0.25rem; margin: 0.4rem 0 1rem; }
 .contact-line a { color: var(--navy); font-weight: 600; }
+.wrap > .list-plain { max-width: 40rem; }
+figcaption { margin-top: 0.45rem; font-size: 0.85rem; line-height: 1.45; color: var(--muted); }
+.btn { max-width: 100%; text-align: center; }
 
 img { max-width: 100%; }
 main { min-height: 50vh; }
