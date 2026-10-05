@@ -59,8 +59,7 @@
       "<div>" +
       '<a class="iam-brand" href="./index.html" style="margin-bottom:0.8rem">' +
       '<div class="iam-mark">IAM</div><div><strong>IAM INTERNATIONAL</strong><span>Logistics Co., Ltd.</span></div></a>' +
-      '<p class="tagline">WE CONNECT. WE MOVE. WE DELIVER.</p>' +
-      "<p>China–Nigeria trading, import, industrial supply and logistics.</p>" +
+      "<p>China–Nigeria trading, import and supply.</p>" +
       '<p><a href="' + PDF + '" download>Company profile (PDF)</a></p></div>' +
       "<div><h4>Company</h4><ul>" +
       '<li><a href="./about.html">About</a></li>' +

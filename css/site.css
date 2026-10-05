@@ -9,8 +9,8 @@
   --ink: #12151a;
   --muted: #5c6270;
   --line: rgba(11, 31, 58, 0.12);
-  --font-display: "Barlow Condensed", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -18,11 +18,18 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
   color: var(--ink);
   background: var(--paper);
-  antialiased: true;
+  -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, h4, .display { font-family: var(--font-display); }
+h1, h2, h3, h4, .display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
 
 .skip-link {
   position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);
@@ -51,14 +58,14 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
   color: var(--navy); display: grid; place-items: center; font-weight: 800;
   font-family: var(--font-display); letter-spacing: 0.04em;
 }
-.iam-brand strong { display: block; font-family: var(--font-display); font-size: 1.05rem; letter-spacing: 0.06em; font-weight: 800; }
-.iam-brand span { display: block; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
+.iam-brand strong { display: block; font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.04em; font-weight: 700; }
+.iam-brand span { display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
 
 .iam-links { display: none; align-items: center; gap: 0.15rem; list-style: none; margin: 0; padding: 0; }
 .iam-links > li { position: relative; }
 .iam-links a, .iam-drop > button {
-  color: rgba(255,255,255,0.82); text-decoration: none; background: none; border: 0;
-  font: 500 13px var(--font-body); letter-spacing: 0.02em; padding: 0.55rem 0.55rem; cursor: pointer;
+  color: rgba(255,255,255,0.88); text-decoration: none; background: none; border: 0;
+  font: 500 0.92rem var(--font-body); letter-spacing: 0; padding: 0.55rem 0.6rem; cursor: pointer;
   white-space: nowrap;
 }
 .iam-links a:hover, .iam-drop > button:hover, .iam-links a[aria-current="page"] { color: var(--gold-soft); }
@@ -76,8 +83,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
   text-decoration: none; border: 1px solid transparent; cursor: pointer;
-  font-family: var(--font-display); font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; font-size: 0.78rem; padding: 0.9rem 1.4rem;
+  font-family: var(--font-body); font-weight: 600; letter-spacing: 0.01em;
+  text-transform: none; font-size: 0.95rem; padding: 0.75rem 1.2rem; line-height: 1.2;
 }
 .btn-gold { background: var(--gold); color: var(--navy); }
 .btn-gold:hover { background: var(--gold-soft); }
@@ -111,23 +118,24 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
 #mobile-menu .btn { margin-top: 0.85rem; width: 100%; }
 
 .page-hero {
-  background: var(--navy); color: #fff; padding: 4.5rem 1.25rem 3.5rem;
+  background: var(--navy); color: #fff; padding: 3.5rem 1.25rem 2.75rem;
   border-bottom: 3px solid var(--gold);
 }
 .page-hero .wrap, .wrap { max-width: 1200px; margin: 0 auto; padding-left: 1.25rem; padding-right: 1.25rem; }
 .page-hero .wrap { padding-left: 0; padding-right: 0; }
 .kicker {
-  font-family: var(--font-display); letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--gold); font-size: 0.72rem; font-weight: 700; margin: 0 0 0.8rem;
+  font-family: var(--font-body); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold); font-size: 0.75rem; font-weight: 600; margin: 0 0 0.65rem;
 }
 .page-hero h1 {
-  margin: 0 0 1rem; font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1.08; font-weight: 800; letter-spacing: -0.02em;
-  max-width: 22ch;
+  margin: 0 0 0.85rem; font-size: clamp(1.85rem, 3vw, 2.6rem); line-height: 1.15; font-weight: 600;
+  max-width: 20ch;
 }
-.page-hero p { max-width: 42rem; color: rgba(255,255,255,0.72); font-size: 1.05rem; line-height: 1.65; margin: 0 0 1.5rem; }
+.page-hero p { max-width: 38rem; color: rgba(255,255,255,0.78); font-size: 1.05rem; line-height: 1.6; margin: 0 0 1rem; }
+.page-hero a { color: var(--gold-soft); }
 .page-hero .subhead {
-  font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
-  letter-spacing: 0.03em; color: var(--gold-soft); margin: 0 0 1rem; max-width: 36rem;
+  font-family: var(--font-body); font-size: 1.15rem; font-weight: 500;
+  letter-spacing: 0; color: var(--gold-soft); margin: 0 0 0.75rem; max-width: 36rem;
 }
 .page-hero .cta-row { margin-top: 0.25rem; }
 .page-hero .bulk-note { color: var(--gold-soft); margin: 0 0 1.25rem; }
@@ -158,7 +166,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
 .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 0.04em; display: block; margin-top: 0.2rem; font-weight: 600; }
 
 .home-hero {
-  position: relative; min-height: 86vh; display: flex; align-items: center;
+  position: relative; min-height: 70vh; display: flex; align-items: center;
   background: var(--navy-deep); color: #fff; overflow: hidden;
 }
 .home-hero img.bg {
@@ -169,7 +177,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
   background: linear-gradient(105deg, rgba(7,21,37,0.92) 0%, rgba(11,31,58,0.78) 55%, rgba(11,31,58,0.55) 100%);
 }
 .home-hero .content { position: relative; z-index: 2; padding: 7rem 1.25rem 4rem; max-width: 1200px; margin: 0 auto; width: 100%; }
-.home-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.06; max-width: 22ch; margin: 0 0 1.1rem; }
+.home-hero h1 { font-size: clamp(2rem, 3.6vw, 2.85rem); line-height: 1.15; font-weight: 600; max-width: 18ch; margin: 0 0 0.9rem; }
 #how-we-trade .lead { max-width: 38rem; margin-bottom: 1.35rem; }
 .trade-models { display: grid; gap: 1rem; }
 @media (min-width: 860px) { .trade-models { grid-template-columns: 1fr 1fr; align-items: stretch; } }
@@ -192,10 +200,10 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
 .model-card h3 {
   margin: 0 0 0.35rem;
   color: var(--navy);
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  line-height: 1.1;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  line-height: 1.25;
 }
 .model-sub { margin: 0 0 0.95rem; color: var(--navy); font-weight: 600; font-size: 0.98rem; line-height: 1.4; }
 .model-focus { list-style: none; margin: 0 0 0.15rem; padding: 0; display: grid; gap: 0.28rem; }
@@ -224,11 +232,11 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
   min-width: 0;
 }
 .stage-line > span {
-  font-family: var(--font-display);
-  font-size: 0.66rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  font-weight: 600;
   color: var(--navy);
   line-height: 1.35;
   white-space: nowrap;
@@ -238,7 +246,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
 .stage-tail { display: contents; }
 @media (min-width: 860px) {
   .model-card .stage-line { gap: 0.18rem 0.22rem; }
-  .model-card .stage-line > span { font-size: 0.62rem; letter-spacing: 0.035em; }
+  .model-card .stage-line > span { font-size: 0.8rem; letter-spacing: 0; }
   .stage-tail {
     display: inline-flex;
     align-items: center;
@@ -282,7 +290,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
   padding: 1.1rem 0.2rem 1.15rem; border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 .process-item h3 {
-  margin: 0 0 0.3rem; font-size: 1rem; color: #fff; letter-spacing: 0.04em; text-transform: uppercase;
+  margin: 0 0 0.3rem; font-size: 1.02rem; color: #fff; letter-spacing: -0.01em; text-transform: none; font-weight: 600;
 }
 .process-item p { margin: 0; color: rgba(255,255,255,0.68); font-size: 0.9rem; line-height: 1.5; }
 .band-navy .process-item .num { align-self: start; padding-top: 0.15rem; }
@@ -299,8 +307,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
   padding: 1.2rem 1.15rem 1.25rem;
 }
 .handle-block h3 {
-  margin: 0 0 0.45rem; font-size: 1.02rem; color: var(--navy);
-  letter-spacing: 0.06em; text-transform: uppercase;
+  margin: 0 0 0.4rem; font-size: 1.08rem; color: var(--navy);
+  letter-spacing: -0.015em; text-transform: none; font-weight: 600;
 }
 .handle-block p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
 .handle-block-navy {
@@ -321,8 +329,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
   #chinese-companies .handle-grid { grid-template-columns: 1fr 1fr; }
 }
 .bulk-note {
-  font-family: var(--font-display); letter-spacing: 0.16em; text-transform: uppercase;
-  font-size: 0.78rem; font-weight: 800; color: var(--navy); margin: -0.6rem 0 1.5rem;
+  font-family: var(--font-body); letter-spacing: 0; text-transform: none;
+  font-size: 0.95rem; font-weight: 600; color: var(--navy); margin: 0 0 1rem;
 }
 .band-navy .bulk-note { color: var(--gold-soft); }
 .cat-row { display: grid; gap: 0.75rem; }
@@ -345,13 +353,13 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
 }
 .trust-list li {
   border: 1px solid var(--line); background: #fff; color: var(--navy);
-  font-family: var(--font-display); letter-spacing: 0.08em; text-transform: uppercase;
-  font-size: 0.72rem; font-weight: 700; padding: 0.55rem 0.75rem;
+  font-family: var(--font-body); letter-spacing: 0; text-transform: none;
+  font-size: 0.92rem; font-weight: 500; padding: 0.45rem 0.7rem;
 }
 
-.section { padding: 4.2rem 0; }
-.section-title { font-size: clamp(1.7rem, 3vw, 2.5rem); margin: 0 0 0.6rem; font-weight: 800; color: var(--navy); }
-.lead { color: var(--muted); max-width: 40rem; line-height: 1.65; margin: 0 0 2rem; }
+.section { padding: 3.25rem 0; }
+.section-title { font-size: clamp(1.45rem, 2.2vw, 1.9rem); margin: 0 0 0.55rem; font-weight: 600; color: var(--navy); letter-spacing: -0.02em; }
+.lead { color: var(--muted); max-width: 38rem; line-height: 1.6; margin: 0 0 1.25rem; font-size: 1.05rem; }
 
 .grid-2 { display: grid; gap: 1.25rem; }
 .grid-3 { display: grid; gap: 1.25rem; }
@@ -402,7 +410,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, summary:focus-visible
 .band-navy .card-body .link { color: var(--gold-soft); }
 
 form.iam-form { display: grid; gap: 0.85rem; }
-.iam-form label { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--navy); }
+.iam-form label { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 600; color: var(--navy); }
 .iam-form label input, .iam-form label select, .iam-form label textarea {
   text-transform: none; letter-spacing: normal; font-weight: 500; font-size: 0.95rem;
 }
@@ -444,13 +452,13 @@ form.iam-form { display: grid; gap: 0.85rem; }
 }
 .ft-grid { display: grid; gap: 2rem; }
 @media (min-width: 800px) { .ft-grid { grid-template-columns: 1.3fr 1fr 1fr 1fr; } }
-#iam-footer h4 { color: #fff; margin: 0 0 0.8rem; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; }
+#iam-footer h4 { color: #fff; margin: 0 0 0.7rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
 #iam-footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
 #iam-footer a:hover { color: var(--gold-soft); }
 #iam-footer ul { list-style: none; margin: 0; padding: 0; }
 #iam-footer li { margin: 0.35rem 0; font-size: 0.9rem; }
 .ft-copy { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 2rem; padding-top: 1rem; font-size: 0.78rem; color: rgba(255,255,255,0.4); display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: space-between; }
-.tagline { color: var(--gold); font-family: var(--font-display); letter-spacing: 0.16em; font-size: 0.78rem; }
+.tagline { color: var(--gold); font-family: var(--font-body); letter-spacing: 0.08em; font-size: 0.75rem; font-weight: 600; }
 
 .doc-frame { background: #fff; border: 1px solid var(--line); padding: 0.75rem; }
 .doc-frame img { width: 100%; height: auto; max-height: 28rem; object-fit: contain; background: #fff; }
