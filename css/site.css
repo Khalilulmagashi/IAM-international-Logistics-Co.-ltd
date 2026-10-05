@@ -202,7 +202,8 @@ html[lang="zh-CN"] h3 { line-height: 1.35; }
 .trust-list-navy li {
   background: var(--navy-mid); border-color: rgba(255,255,255,0.12); color: #fff;
 }
-.zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 0.04em; display: block; margin-top: 0.2rem; font-weight: 600; }
+.zh { display: none; }
+html[lang="zh-CN"] .zh { font-size: 0.8rem; color: var(--gold); letter-spacing: 0.04em; display: block; margin-top: 0.2rem; font-weight: 600; }
 
 .home-hero {
   position: relative; min-height: 70vh; display: flex; align-items: center;
